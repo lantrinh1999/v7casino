@@ -82,7 +82,7 @@ class Cache implements CacheInterface
 
         $key = $this->generateCacheKey($key);
 
-        $this->storeCacheKey($key);
+        // $this->storeCacheKey($key);
 
         $this->cache->put($key, $value, $minutes);
 

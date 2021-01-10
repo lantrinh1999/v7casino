@@ -1,9 +1,0 @@
-{
-    "name": "Translation",
-    "namespace": "Botble\\Translation\\",
-    "provider": "Botble\\Translation\\Providers\\TranslationServiceProvider",
-    "author": "Botble Technologies",
-    "url": "https://facebook.com",
-    "version": "5.8",
-    "description": "Manage translation text"
-}
