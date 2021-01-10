@@ -1,0 +1,9 @@
+{
+    "name": "Language",
+    "namespace": "Botble\\Language\\",
+    "provider": "Botble\\Language\\Providers\\LanguageServiceProvider",
+    "author": "Botble Technologies",
+    "url": "https://facebook.com",
+    "version": "5.8",
+    "description": "Multilingual for Botble CMS"
+}
