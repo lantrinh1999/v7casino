@@ -22,6 +22,7 @@ class BlogCrawlerCreateBlogCrawlerTable extends Migration
             $table->string('image_selector', 100)->nullable();
             $table->string('description_selector', 100)->nullable();
             $table->string('content_selector', 100)->nullable();
+            $table->string('content_image_attr_selector', 100)->nullable();
             $table->string('tag_selector', 100)->nullable();
             $table->string('crawl_status', 60)->nullable()->default('not_running')->comment('not_running: chưa chạy; done: hoàn thành; running: đang chạy');
             $table->string('crawl_type', 60)->nullable()->default('now')->comment('now:chạy ngay; after: chạy sau');

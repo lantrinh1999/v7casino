@@ -29,6 +29,7 @@ class CrawlerCategory extends BaseModel
         'image_selector',
         'description_selector',
         'content_selector',
+        'content_image_attr_selector',
         'tag_selector',
         'crawl_status',
         'crawl_type',

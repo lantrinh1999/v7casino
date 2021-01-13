@@ -64,7 +64,7 @@ class CrawlerCategoryForm extends FormAbstract
                 'label_attr' => ['class' => 'control-label required'],
                 'attr' => [
                     'data-counter' => 100,
-                    'placeholder' => 'VD: #main div.title',
+                    'placeholder' => 'VD: h1.title',
                 ],
             ])
             ->add('image_selector', 'text', [
@@ -72,7 +72,7 @@ class CrawlerCategoryForm extends FormAbstract
                 'label_attr' => ['class' => 'control-label required'],
                 'attr' => [
                     'data-counter' => 100,
-                    'placeholder' => 'VD: #main img.thumb',
+                    'placeholder' => 'VD: img#thumb',
                 ],
             ])
             ->add('description_selector', 'text', [
@@ -80,7 +80,7 @@ class CrawlerCategoryForm extends FormAbstract
                 'label_attr' => ['class' => 'control-label'],
                 'attr' => [
                     'data-counter' => 100,
-                    'placeholder' => 'VD: div.cotent',
+                    'placeholder' => 'VD: div.description',
                 ],
             ])
             ->add('content_selector', 'text', [
@@ -89,6 +89,14 @@ class CrawlerCategoryForm extends FormAbstract
                 'attr' => [
                     'data-counter' => 100,
                     'placeholder' => 'VD: div.content',
+                ],
+            ])
+            ->add('content_image_attr_selector', 'text', [
+                'label' => 'Post Content Image Attribute Name',
+                'label_attr' => ['class' => 'control-label required'],
+                'attr' => [
+                    'data-counter' => 100,
+                    'placeholder' => 'VD: src,data-src',
                 ],
             ])
             ->add('tag_selector', 'text', [

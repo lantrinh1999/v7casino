@@ -13,8 +13,8 @@ use Html;
 class CrawlStatusEnum extends Enum
 {
     public const RUNNING = 'running';
-    public const NOT_RUNNING = 'NOT_RUNNING';
-    public const DONE = 'DONE';
+    public const NOT_RUNNING = 'not_running';
+    public const DONE = 'done';
 
     // /**
     //  * @var string

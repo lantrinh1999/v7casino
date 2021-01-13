@@ -4,6 +4,7 @@ namespace Botble\BlogCrawler\Providers;
 
 use Botble\Base\Supports\Helper;
 use Botble\Base\Traits\LoadAndPublishDataTrait;
+use Botble\BlogCrawler\Commands\BlogCrawlerCommand;
 use Botble\BlogCrawler\Models\CrawlerCategory;
 use Botble\BlogCrawler\Models\CrawlerPost;
 use Botble\BlogCrawler\Repositories\Caches\CrawlerCategoryCacheDecorator;
@@ -34,6 +35,12 @@ class BlogCrawlerServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                BlogCrawlerCommand::class,
+            ]);
+        }
+
         $this->setNamespace('plugins/blog-crawler')
             ->loadAndPublishConfigurations(['permissions'])
             ->loadMigrations()
