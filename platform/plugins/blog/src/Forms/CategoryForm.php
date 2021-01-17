@@ -47,13 +47,12 @@ class CategoryForm extends FormAbstract
                 ],
                 'choices'    => $categories,
             ])
-            ->add('description', 'textarea', [
-                'label'      => trans('core/base::forms.description'),
+            ->add('content', 'editor', [
+                'label'      => trans('core/base::forms.content'),
                 'label_attr' => ['class' => 'control-label'],
                 'attr'       => [
-                    'rows'         => 4,
-                    'placeholder'  => trans('core/base::forms.description_placeholder'),
-                    'data-counter' => 400,
+                    'rows'         => 5,
+                    'placeholder'  => trans('core/base::forms.content_placeholder'),
                 ],
             ])
             ->add('is_default', 'onOff', [
@@ -81,6 +80,24 @@ class CategoryForm extends FormAbstract
                 'label'         => trans('core/base::forms.is_featured'),
                 'label_attr'    => ['class' => 'control-label'],
                 'default_value' => false,
+            ])
+            ->add('description', 'textarea', [
+                'label'      => trans('core/base::forms.description'),
+                'label_attr' => ['class' => 'control-label'],
+                'attr'       => [
+                    'rows'         => 3,
+                    'placeholder'  => trans('core/base::forms.description_placeholder'),
+                    'data-counter' => 400,
+                ],
+            ])
+            ->add('source_url', 'textarea', [
+                'label'      => 'URL crawler',
+                'label_attr' => ['class' => 'control-label'],
+                'attr'       => [
+                    'placeholder'  => 'url',
+                    'data-counter' => 1200,
+                    'rows'         => 3,
+                ],
             ])
             ->add('status', 'customSelect', [
                 'label'      => trans('core/base::tables.status'),

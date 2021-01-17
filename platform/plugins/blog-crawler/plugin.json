@@ -1,0 +1,9 @@
+{
+    "name": "BlogCrawler",
+    "namespace": "Botble\\BlogCrawler\\",
+    "provider": "Botble\\BlogCrawler\\Providers\\BlogCrawlerServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module blog_crawler"
+}
