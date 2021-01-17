@@ -33,8 +33,8 @@ class BlogCrawlerCreateBlogCrawlerTable extends Migration
 
         Schema::create('crawler_posts', function (Blueprint $table) {
             $table->id();
-            $table->integer('crawler_category_id')->unsigned()->references('id')->on('crawler_categories')->onDelete('cascade');
-            $table->integer('post_id')->unsigned()->references('id')->on('posts')->onDelete('cascade');
+            $table->bigInteger('crawler_category_id')->unsigned()->references('id')->on('crawler_categories')->onDelete('cascade');
+            $table->bigInteger('post_id')->unsigned()->references('id')->on('posts')->onDelete('cascade');
             $table->string('link', 255)->nullable();
             $table->string('crawl_status', 60)->nullable()->default('not_running')->comment('not_running: chưa chạy; done: hoàn thành; running: đang chạy');
             $table->timestamps();

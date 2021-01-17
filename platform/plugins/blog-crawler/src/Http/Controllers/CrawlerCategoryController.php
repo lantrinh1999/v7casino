@@ -62,7 +62,8 @@ class CrawlerCategoryController extends BaseController
     public function store(CrawlerCategoryRequest $request, BaseHttpResponse $response)
     {
         $data = $request->all();
-        $data['categories_id'] = json_encode((array) $request->categories_id);
+
+        $data['categories_id'] = json_encode($request->categories_id);
         $blogCrawler = $this->blogCrawlerRepository->createOrUpdate($data);
 
         event(new CreatedContentEvent(BLOG_CRAWLER_MODULE_SCREEN_NAME, $request, $blogCrawler));
@@ -100,7 +101,9 @@ class CrawlerCategoryController extends BaseController
     {
         $blogCrawler = $this->blogCrawlerRepository->findOrFail($id);
 
-        $blogCrawler->fill($request->input());
+        $data = $request->all();
+        $data['categories_id'] = json_encode($request->categories_id);
+        $blogCrawler->fill($data);
 
         $this->blogCrawlerRepository->createOrUpdate($blogCrawler);
 

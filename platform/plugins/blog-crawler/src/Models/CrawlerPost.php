@@ -11,7 +11,7 @@ class CrawlerPost extends BaseModel
      *
      * @var string
      */
-    protected $table = 'crawler_categories';
+    protected $table = 'crawler_posts';
 
     /**
      * @var array
