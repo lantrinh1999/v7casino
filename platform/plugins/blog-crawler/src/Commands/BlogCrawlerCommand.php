@@ -104,7 +104,7 @@ class BlogCrawlerCommand extends Command
             $crawler_name = $category->name;
             $this->info("+ Crawl $crawler_name");
 
-            $domain = parse_url($category->link)['host'];
+            $domain = trim(parse_url($category->link)['host']);
 
             $crawler = $this->client->request('GET', $category->link);
             $post_link_selectors = explode('|', $category->post_link_selector);
@@ -129,7 +129,6 @@ class BlogCrawlerCommand extends Command
                         continue;
                     }
 
-                    $this->info(CrawlerPost::where('link', $link)->exists());
                     $this->info($link);
                     $crawler = $this->client->request('GET', $link);
                     // get title
