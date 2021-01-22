@@ -55,8 +55,8 @@
         </div>
         <div class="sub-menu-mobile d-lg-none">
             <div class="account-button">
-                <a href="#" class="btn-account btn-signup">Đăng ký</a>
-                <a href="#" class="btn-account btn-login">Đăng nhập</a>
+                <a href="#" id="btn-signup" class="btn-account btn-signup">Đăng ký</a>
+                <a href="#" id="btn-login" class="btn-account btn-login">Đăng nhập</a>
                 <a href="#" class="btn-account btn-signup">Đăng ký</a>
                 <a href="#" class="btn-account btn-login">Đăng nhập</a>
             </div>

@@ -86,13 +86,4 @@ $(document).ready(function () {
             drawer.open();
         });
 
-    $('.mm-ocd__content').append('<div class="account-button"><a href="#" class="btn-account btn-signup">Đăng ký</a><a href="#" class="btn-account btn-login">Đăng nhập</a></div>');
-    $('.mm-spn--open').prepend('<div class="search-box">\n' +
-        '                    <form action="" class="form-search">\n' +
-        '                        <input type="search" name="s" class="form-control" placeholder="Tìm kiếm...">\n' +
-        '                        <button class="btn btn-search" type="submit">\n' +
-        '                            <i class="fas fa-search"></i>\n' +
-        '                        </button>\n' +
-        '                    </form>\n' +
-        '                </div>');
 });

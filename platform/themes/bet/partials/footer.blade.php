@@ -1,5 +1,3 @@
-
-
 <footer>
     <div class="footer-1">
         <div class="container">
@@ -217,116 +215,36 @@
     </div>
     <div class="menu-mobile">
         <nav class="menu-wrap-mobile">
-            <ul>
-                <li class="Selected">
-                    <a href="#">
-                        Link Mới KU
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                KU Casino
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        Xóc đĩa
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Baccarat
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Rồng hổ
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                KU Bet
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        Xóc đĩa
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Baccarat
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Rồng hổ
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Tha Bet
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        Xóc đĩa
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Baccarat
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Rồng hổ
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="Selected">
-                    <a href="#">
-                        Thể Thao
-                    </a>
-                </li>
-                <li class="Selected">
-                    <a href="#">
-                        Xổ Số
-                    </a>
-                </li>
-                <li class="Selected">
-                    <a href="#">
-                        Tin Mới
-                    </a>
-                </li>
-                <li class="Selected">
-                    <a href="#">
-                        Tải KU APP
-                    </a>
-                </li>
-                </li>
-                <li class="Selected">
-                    <a href="#">
-                        Hướng Dẫn
-                    </a>
-                </li>
-                <li class="Selected">
-                    <a href="#">
-                        Liên hệ KU
-                    </a>
-                </li>
-            </ul>
+            {{-- mobile memu here --}}
+            {!! Menu::renderMenuLocation('main-menu', ['view' => 'mobile-menu']) !!}
         </nav>
     </div>
 </footer>
 <!-- JS Library-->
 {!! Theme::footer() !!}
+<script>
+    $(document).ready(function() {
+        let html1 = $('#btn-signup').get(0).outerHTML;
+        let html2 = $('#btn-login').get(0).outerHTML;
+        setTimeout(function() {
+            $('.mm-ocd__content').append(
+                `<div class="account-button account-button-sm">
+                    ${html1}
+                    ${html2}
+                    </div>`
+            );
+            $('.mm-spn--open').prepend(`<div class="search-box">
+                            <form action="/search" class="form-search">
+                            <input type="search" name="q" class="form-control" placeholder="Tìm kiếm...">
+                            <button class="btn btn-search" type="submit">
+                            <i class="fas fa-search"></i>
+                            </button>
+                            </form>
+                            </div>`);
+        }, 1000)
+    });
+
+</script>
 </body>
+
 </html>
