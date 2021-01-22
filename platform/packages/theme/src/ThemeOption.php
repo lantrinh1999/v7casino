@@ -470,7 +470,7 @@ class ThemeOption
         $option = Arr::get($this->fields[$this->optName], $key);
 
         if ($option && Arr::get($option, 'clean_tags', true)) {
-            $value = clean($value);
+            $value = $value;
         }
 
         Setting::set($this->getOptionKey($key, $this->getCurrentLocaleCode()), $value);

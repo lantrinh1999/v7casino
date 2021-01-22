@@ -4,10 +4,10 @@
     <div class="footer-1">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-lg-2">
+                <div class="col-6 col-md-4 col-lg-2">
                     <div class="footer-col">
                         <div class="footer-title">
-                            <img src="img/icon-soccer.png" alt="icon"> THỂ THAO
+                            THỂ THAO
                         </div>
                         <div class="footer-menu-wrap">
                             <ul class="footer-menu">
@@ -40,10 +40,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
+                <div class="col-6 col-md-4 col-lg-2">
                     <div class="footer-col">
                         <div class="footer-title">
-                            <img src="img/icon-card.png" alt="icon"> KU CASINO
+                            KU CASINO
                         </div>
                         <div class="footer-menu-wrap">
                             <ul class="footer-menu">
@@ -76,10 +76,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
+                <div class="col-6 col-md-4 col-lg-2">
                     <div class="footer-col">
                         <div class="footer-title">
-                            <img src="img/icon-casio.png" alt="icon"> GAMES
+                            GAMES
                         </div>
                         <div class="footer-menu-wrap">
                             <ul class="footer-menu">
@@ -112,10 +112,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
+                <div class="col-6 col-md-4 col-lg-2">
                     <div class="footer-col">
                         <div class="footer-title">
-                            <img src="img/icon-8.png" alt="icon"> XỔ SỐ
+                            XỔ SỐ
                         </div>
                         <div class="footer-menu-wrap">
                             <ul class="footer-menu">
@@ -148,10 +148,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
+                <div class="col-6 col-md-4 col-lg-2">
                     <div class="footer-col">
                         <div class="footer-title">
-                            <img src="img/icon-question.png" alt="icon"> GIỚI THIỆU
+                            GIỚI THIỆU
                         </div>
                         <div class="footer-menu-wrap">
                             <ul class="footer-menu">
@@ -184,7 +184,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
+                <div class="col-6 col-md-4 col-lg-2">
                     <div class="footer-col border-0">
                         <div class="footer-qr">
                             <img src="img/qr.png" alt="qr">
@@ -208,7 +208,7 @@
                         <img src="img/dmca.png" alt="dmca   ">
                     </a>
                     <p class="copyright-paragraph">
-                        Copyright 2021 © <strong>KU Casino Bet</strong>
+                        {{ theme_option('copyright') }}
                     </p>
                     <img src="img/brand-lists.png" alt="brand" class="list-brand">
                 </div>

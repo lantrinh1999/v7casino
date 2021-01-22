@@ -25,7 +25,7 @@
         margin-bottom : 5px;
     }
 </style>
-<section class="section pt-50 pb-100">
+<section class="section pt-1 pb-3 pt-md-3 pt-lg-5">
     <div class="container">
         <div class="page-content error-page">
             <div class="error-code">

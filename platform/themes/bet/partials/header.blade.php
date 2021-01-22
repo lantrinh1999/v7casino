@@ -7,17 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family={{ urlencode(theme_option('primary_font', 'Roboto')) }}" rel="stylesheet" type="text/css">
     {!! Theme::header() !!}
+    {!! Theme::partial('style.style') !!}
 </head>
 <body>
 
 <div class="header">
     <div class="header-top">
-        <div class="container">
+        <div class="container py-2">
             <div class="row align-items-center">
                 <div class="col-6 col-md-3 col-lg-1">
-                    <a href="#">
+                    <a href="{{ url('/') }}">
                         <div class="logo text-left">
-                            <img src="img/logo.png" alt="logo">
+                            <img src="{{ get_object_image(theme_option('logo')) }}" alt="logo">
                         </div>
                     </a>
                 </div>
@@ -52,249 +53,38 @@
                 </div>
             </div>
         </div>
+        <div class="sub-menu-mobile d-lg-none">
+            <div class="account-button">
+                <a href="#" class="btn-account btn-signup">Đăng ký</a>
+                <a href="#" class="btn-account btn-login">Đăng nhập</a>
+                <a href="#" class="btn-account btn-signup">Đăng ký</a>
+                <a href="#" class="btn-account btn-login">Đăng nhập</a>
+            </div>
+        </div>
     </div>
+
     <div class="header-menu d-none d-lg-block">
         <div class="container">
             <div class="header-menu-wrap">
                 <nav class="menu-wrap">
-                    <ul class="menu">
-                        <li class="menu-item menu-item-has-children">
-                            <a href="#" class="menu-link">
-                                Link Mới KU
-                            </a>
-                            <ul class="sub-menu-wrap">
-                                <li class="sub-menu-col">
-                                    <ul class="sub-menu">
-                                        <li class="menu-item sub-menu-header">
-                                            <a href="#" class="menu-link">
-                                                Ku Casino
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Xóc Đĩa
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Baccarat
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Rồng Hổ
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Tài Xỉu
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Sòng Bài Ku
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="sub-menu-col">
-                                    <ul class="sub-menu">
-                                        <li class="menu-item sub-menu-header">
-                                            <a href="#" class="menu-link">
-                                                Ku Bet
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Sòng Ku Bet
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Ku88
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Ku888
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="sub-menu-col">
-                                    <ul class="sub-menu">
-                                        <li class="menu-item sub-menu-header">
-                                            <a href="#" class="menu-link">
-                                                Tha Bet
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Thiên Hạ Bet
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Tha Casino
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Tha Baccarat
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item menu-item-has-children">
-                            <a href="#" class="menu-link">
-                                Thể Thao
-                            </a>
-                            <ul class="sub-menu-wrap">
-                                <li class="sub-menu-col">
-                                    <ul class="sub-menu">
-                                        <li class="menu-item sub-menu-header">
-                                            <a href="#" class="menu-link">
-                                                Ku Casino
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Xóc Đĩa
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Baccarat
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Rồng Hổ
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Tài Xỉu
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Sòng Bài Ku
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="sub-menu-col">
-                                    <ul class="sub-menu">
-                                        <li class="menu-item sub-menu-header">
-                                            <a href="#" class="menu-link">
-                                                Ku Bet
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Sòng Ku Bet
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Ku88
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Ku888
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item menu-item-has-children">
-                            <a href="#" class="menu-link">
-                                Xổ Số
-                            </a>
-                            <ul class="sub-menu-wrap">
-                                <li class="sub-menu-col">
-                                    <ul class="sub-menu">
-                                        <li class="menu-item sub-menu-header">
-                                            <a href="#" class="menu-link">
-                                                Ku Casino
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Xóc Đĩa
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Baccarat
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Rồng Hổ
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Tài Xỉu
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#" class="menu-link">
-                                                Sòng Bài Ku
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Tin Mới
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Tải KU APP
-                            </a>
 
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Hướng Dẫn
-                            </a>
-
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Liên hệ KU
-                            </a>
-
-                        </li>
-                    </ul>
+                    {{-- memu here --}}
+                    {!!
+                        Menu::renderMenuLocation('main-menu', [
+                            'options' => ['class' => 'menu'],
+                            'view'    => 'main-menu',
+                        ])
+                    !!}
                 </nav>
                 <div class="search-box">
-                    <form action="" class="form-search">
-                        <input type="search" name="s" class="form-control" placeholder="Tìm kiếm...">
+                    <form action="/search" class="form-search">
+                        <input type="search" name="q" class="form-control" value="{{ Request::input('q') ?? null }}" placeholder="Tìm kiếm...">
                         <button class="btn btn-search" type="submit">
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="sub-menu-mobile d-lg-none">
-        <div class="account-button">
-            <a href="#" class="btn-account btn-signup">Đăng ký</a>
-            <a href="#" class="btn-account btn-login">Đăng nhập</a>
-            <a href="#" class="btn-account btn-signup">Đăng ký</a>
-            <a href="#" class="btn-account btn-login">Đăng nhập</a>
         </div>
     </div>
 </div>

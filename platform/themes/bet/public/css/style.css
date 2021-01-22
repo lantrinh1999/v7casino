@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
-    font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
 
-a:hover {
+/* a:hover {
     color: #2ecc71;
-}
+} */
 
 .header-top {
     background: #2ecc71;
-    padding: 10px 0;
+    /* padding: 10px 0; */
 }
 
 .header-menu {
@@ -54,9 +53,6 @@ a:hover {
     background: #2c3e50;
 }
 
-.btn-signup:hover, .btn-login:hover {
-    color: #59dd8e;
-}
 
 .menu, .sub-menu {
     padding: 0;
@@ -93,14 +89,14 @@ a:hover {
 .menu .menu-item.menu-item-has-children:hover .sub-menu-wrap {
     opacity: 1;
     visibility: visible;
-    z-index: 9;
+    z-index: 900;
     transition: .5s ease-in-out;
 }
 
 .sub-menu-col .sub-menu .menu-link {
     margin: 0 !important;
     padding: 0 15px;
-    width: 150px;
+    width: 200px;
     font-weight: normal;
 }
 
@@ -665,4 +661,24 @@ main {
         margin: 0 15px !important;
         font-size: 12px !important;
     }
+}
+
+.page-pagination ul {
+    margin: 0
+}
+
+.page-pagination li {
+    margin: 0 0 0 10px
+}
+
+.page-pagination li a, .page-pagination li span {
+    border: none;
+    outline: 0;
+    border-radius: 0!important;
+    color: #bead8e
+}
+
+.page-pagination li.active span, .page-pagination li:hover a, .page-pagination li:hover span {
+    background-color: #bead8e !important;
+    color: #fff!important
 }

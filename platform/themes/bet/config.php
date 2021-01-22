@@ -84,6 +84,7 @@ return [
                 ->usePath()->add('slick-css', 'css/slick.css')
                 ->usePath()->add('slick-theme-css', 'css/slick-theme.css')
                 ->usePath()->add('mmenu-light-css', 'css/mmenu-light.css')
+                ->usePath()->add('custom', 'css/custom.css', [], [], '5.11')
                 ->usePath()->add('style', 'css/style.css', [], [], '5.11');
 
             if (function_exists('shortcode')) {

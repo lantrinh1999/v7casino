@@ -5,7 +5,7 @@
                 @if ($row->icon_font)<i class='{{ trim($row->icon_font) }}'></i> @endif{{ $row->title }}
                 @if ($row->has_child) <span class="toggle-icon"><i class="fa fa-angle-down"></i></span>@endif
             </a>
-            @if ($row->has_child)
+            @if ()
                 {!!
                     Menu::generateMenu([
                         'menu'       => $menu,
