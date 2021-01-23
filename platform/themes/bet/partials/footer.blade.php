@@ -2,196 +2,20 @@
     <div class="footer-1">
         <div class="container">
             <div class="row">
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="footer-col">
-                        <div class="footer-title">
-                            THỂ THAO
-                        </div>
-                        <div class="footer-menu-wrap">
-                            <ul class="footer-menu">
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        JZ thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        CMD368
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        IB Bet Saba
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        AG thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        BBIN thể thao
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="footer-col">
-                        <div class="footer-title">
-                            KU CASINO
-                        </div>
-                        <div class="footer-menu-wrap">
-                            <ul class="footer-menu">
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        JZ thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        CMD368
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        IB Bet Saba
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        AG thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        BBIN thể thao
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="footer-col">
-                        <div class="footer-title">
-                            GAMES
-                        </div>
-                        <div class="footer-menu-wrap">
-                            <ul class="footer-menu">
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        JZ thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        CMD368
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        IB Bet Saba
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        AG thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        BBIN thể thao
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="footer-col">
-                        <div class="footer-title">
-                            XỔ SỐ
-                        </div>
-                        <div class="footer-menu-wrap">
-                            <ul class="footer-menu">
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        JZ thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        CMD368
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        IB Bet Saba
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        AG thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        BBIN thể thao
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="footer-col">
-                        <div class="footer-title">
-                            GIỚI THIỆU
-                        </div>
-                        <div class="footer-menu-wrap">
-                            <ul class="footer-menu">
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        JZ thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        CMD368
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        IB Bet Saba
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        AG thể thao
-                                    </a>
-                                </li>
-                                <li class="footer-menu-item">
-                                    <a href="#" class="footer-menu-link">
-                                        BBIN thể thao
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                 {{-- footer menu here --}}
+                @for ($i = 1; $i < 6; $i++)
+                {!! Menu::renderMenuLocation("bet-footer-$i", ['view' => 'footer-menu']) !!}
+                @endfor
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="footer-col border-0">
                         <div class="footer-qr">
-                            <img src="img/qr.png" alt="qr">
+                            <img src="{{ get_object_image(theme_option('img_qr') ?? '') }}" alt="qr">
                         </div>
-                        <a href="#" class="qr-link">
+                        {{-- <a href="#" class="qr-link">
                             <i class="fas fa-mobile-alt"></i> Mobile app
-                        </a>
-                        <div class="qr-slogan">
-                            Tận hưởng mọi lúc đặt cược kịp thời
+                        </a> --}}
+                        <div class="qr-slogan mt-2">
+                            <b>Tận hưởng mọi lúc đặt cược kịp thời</b>
                         </div>
                     </div>
                 </div>
@@ -202,13 +26,13 @@
         <div class="container">
             <div class="row">
                 <div class="copyright">
-                    <a href="#">
+                    {{-- <a href="#">
                         <img src="img/dmca.png" alt="dmca   ">
-                    </a>
+                    </a> --}}
                     <p class="copyright-paragraph">
                         {{ theme_option('copyright') }}
                     </p>
-                    <img src="img/brand-lists.png" alt="brand" class="list-brand">
+                    {{-- <img src="img/brand-lists.png" alt="brand" class="list-brand"> --}}
                 </div>
             </div>
         </div>
@@ -223,6 +47,7 @@
 <!-- JS Library-->
 {!! Theme::footer() !!}
 <script>
+
     $(document).ready(function() {
         let html1 = $('#btn-signup').get(0).outerHTML;
         let html2 = $('#btn-login').get(0).outerHTML;

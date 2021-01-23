@@ -16,9 +16,9 @@
                 </span>
             @endif
             <span class="post__created-at"><i class="ion-clock"></i>{{ $post->created_at->format('M d, Y') }}</span>
-            @if ($post->author->username)
+            {{-- @if ($post->author->username)
                 <span class="post__author"><i class="ion-android-person"></i><span>{{ $post->author->getFullName() }}</span></span>
-            @endif
+            @endif --}}
 
             @if (!$post->tags->isEmpty())
                 <span class="post__tags"><i class="ion-pricetags"></i>

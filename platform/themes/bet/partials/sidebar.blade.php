@@ -5,46 +5,44 @@
 
 
     .page-sidebar .post__title a {
-    color: #666;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform:capitalize;
-    letter-spacing: 0;
-}
+        color: #666;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: capitalize;
+        letter-spacing: 0;
 
+    }
+
+    .sidebar-header * {
+        color: rgb(73, 73, 73) !important;
+    }
 
 </style>
 <div class="page-sidebar mt-lg-0">
-    <section class="sidebar-wrap mt-4 mt-lg-0">
-        <div class="sidebar-header pb-2">
-            <h3>BÀI VIẾT MỚI NHẤT</h3>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-12">
-                <div class="">
-                    <a href="https://cms.botble.com/simple-ways-to-reduce-your-unwanted-wrinkles" title="">
-                        <img src="https://cms.botble.com/storage/news/11-540x360.jpg"
-                            alt="Simple Ways To Reduce Your Unwanted Wrinkles!">
-                    </a>
-                </div>
-                <h4 class="post__title  mb-4 mt-2 mx-2">
-                    <a href="https://cms.botble.com/simple-ways-to-reduce-your-unwanted-wrinkles">Simple Ways To Reduce
-                        Your Unwanted Wrinkles!</a>
-                </h4>
+    @php
+    $newest_posts = get_latest_posts(3);
+    @endphp
+    @if (!empty($newest_posts))
+        <section class="sidebar-wrap mt-4 mt-lg-0">
+            <div class="sidebar-header pb-2 ">
+                <h3 class="border-bottom">BÀI VIẾT MỚI NHẤT</h3>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-12">
-                <div class="">
-                    <a href="https://cms.botble.com/simple-ways-to-reduce-your-unwanted-wrinkles" title="">
-                        <img src="https://cms.botble.com/storage/news/11-540x360.jpg"
-                            alt="Simple Ways To Reduce Your Unwanted Wrinkles!">
-                    </a>
-                </div>
-                <h4 class="post__title mb-4 mt-2 mx-2">
-                    <a href="https://cms.botble.com/simple-ways-to-reduce-your-unwanted-wrinkles">Simple Ways To Reduce
-                        Your Unwanted Wrinkles!</a>
-                </h4>
-            </div>
-        </div>
-    </section>
-</div>
+            <div class="row">
 
+                @foreach ($newest_posts as $item)
+                    <div class="col-sm-12 col-md-6 col-lg-12">
+                        <div class="">
+                            <a href="{{ $item->url }}" title="">
+                                <img src="{{ RvMedia::getImageUrl($item->image, 'medium', false, RvMedia::getDefaultImage()) }}"
+                                    alt="{{ $item->name }}">
+                            </a>
+                        </div>
+                        <h4 class="post__title  mb-4 mt-2 mx-2">
+                            <a href="{{ $item->url }}">{{ $item->name }}</a>
+                        </h4>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+    @endif
+</div>

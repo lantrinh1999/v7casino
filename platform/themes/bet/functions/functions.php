@@ -1,4 +1,11 @@
 <?php
+Menu::addMenuLocation('bet-footer-1', 'Footer 1');
+Menu::addMenuLocation('bet-footer-2', 'Footer 2');
+Menu::addMenuLocation('bet-footer-3', 'Footer 3');
+Menu::addMenuLocation('bet-footer-4', 'Footer 4');
+Menu::addMenuLocation('bet-footer-5', 'Footer 5');
+Menu::removeMenuLocation('header-menu');
+Menu::removeMenuLocation('footer-menu');
 
 register_page_template([
     'default' => 'Default',
@@ -27,14 +34,24 @@ theme_option()
         ],
         'helper' => __('Copyright on footer of site'),
     ])
+    // ->setField([
+    //     'id' => 'primary_font',
+    //     'section_id' => 'opt-text-subsection-general',
+    //     'type' => 'googleFonts',
+    //     'label' => __('Primary font'),
+    //     'attributes' => [
+    //         'name' => 'primary_font',
+    //         'value' => 'Roboto',
+    //     ],
+    // ])
     ->setField([
-        'id' => 'primary_font',
+        'id' => 'primary_color',
         'section_id' => 'opt-text-subsection-general',
-        'type' => 'googleFonts',
-        'label' => __('Primary font'),
+        'type' => 'customColor',
+        'label' => 'Màu chủ đạo',
         'attributes' => [
-            'name' => 'primary_font',
-            'value' => 'Roboto',
+            'name' => 'primary_color',
+            'value' => '#ff2b4a',
         ],
     ])
     ->setField([
@@ -48,6 +65,36 @@ theme_option()
         ],
     ])
     ->setField([
+        'id' => 'header_color_2',
+        'section_id' => 'opt-text-subsection-general',
+        'type' => 'customColor',
+        'label' => 'Màu Menu',
+        'attributes' => [
+            'name' => 'header_color_2',
+            'value' => '#ff2b4a',
+        ],
+    ])
+    ->setField([
+        'id' => 'header_text_color_2',
+        'section_id' => 'opt-text-subsection-general',
+        'type' => 'customColor',
+        'label' => 'Màu Chữ Menu',
+        'attributes' => [
+            'name' => 'header_text_color_2',
+            'value' => '#fff',
+        ],
+    ])
+    ->setField([
+        'id' => 'footer_color',
+        'section_id' => 'opt-text-subsection-general',
+        'type' => 'customColor',
+        'label' => 'Màu footer',
+        'attributes' => [
+            'name' => 'footer_color',
+            'value' => '#2ecc71',
+        ],
+    ])
+    ->setField([
         'id' => 'background_color',
         'section_id' => 'opt-text-subsection-general',
         'type' => 'customColor',
@@ -58,15 +105,56 @@ theme_option()
         ],
     ])
     ->setField([
-        'id' => 'primary_color',
+        'id' => 'img_qr',
         'section_id' => 'opt-text-subsection-general',
-        'type' => 'customColor',
-        'label' => __('Primary color'),
+        'type' => 'mediaImage',
+        'label' => 'QR',
         'attributes' => [
-            'name' => 'primary_color',
-            'value' => '#ff2b4a',
+            'name' => 'img_qr',
+            'value' => null,
         ],
-    ]);
+    ])
+    ->setField([ // Set field for section
+        'id' => 'marquee',
+        'section_id' => 'opt-text-subsection-general',
+        'type' => 'textarea',
+        'label' => 'Marquee',
+        'attributes' => [
+            'name' => 'marquee',
+            'value' => null, // Default value
+            'options' => [ // Optional
+                'class' => 'form-control theme-option-textarea',
+                'row' => 2,
+            ],
+        ],
+    ])
+    ->setField([
+        'id' => 'horizontal_banner',
+        'section_id' => 'opt-text-subsection-general',
+        'type' => 'mediaImage',
+        'label' => 'Banner ngang',
+        'attributes' => [
+            'name' => 'horizontal_banner',
+            'value' => null,
+        ],
+    ])
+
+    ->setField([
+        'id' => 'download_url',
+        'section_id' => 'opt-text-subsection-general',
+        'type' => 'url',
+        'label' => "Đường dẫn download",
+        'attributes' => [
+            'name' => 'download_url',
+            'value' => null,
+            'options' => [
+                'class' => 'form-control',
+                'data-counter' => 250,
+            ],
+        ],
+    ])
+    ;
+
 // trang chủ
 theme_option()
     ->setSection([ // Set section with no field
@@ -147,7 +235,76 @@ theme_option()
         ],
     ]);
 
-;
+
+
+    // button header
+    theme_option()
+    ->setSection([ // Set section with no field
+        'title' => __('Nút trên Header'),
+        'desc' => __('Cút trên Header'),
+        'id' => 'header-button',
+        'subsection' => true,
+        'icon' => 'fa fa-list',
+    ])
+    ->setField([
+        'id' => 'login-button',
+        'section_id' => 'header-button',
+        'type' => 'text',
+        'label' => 'Nút đăng nhập',
+        'attributes' => [
+            'name' => 'login-button',
+            'value' => 'https://google.com/',
+            'options' => [
+                'class' => 'form-control',
+                'data-counter' => 300,
+            ],
+        ],
+    ])
+    ->setField([
+        'id' => 'register-button',
+        'section_id' => 'header-button',
+        'type' => 'text',
+        'label' => 'Nút đăng ký',
+        'attributes' => [
+            'name' => 'register-button',
+            'value' => 'https://google.com/',
+            'options' => [
+                'class' => 'form-control',
+                'data-counter' => 300,
+            ],
+        ],
+    ])
+    ->setField([
+        'id' => 'tutorial-button',
+        'section_id' => 'header-button',
+        'type' => 'text',
+        'label' => 'Nút hướng dẫn',
+        'attributes' => [
+            'name' => 'tutorial-button',
+            'value' => 'https://google.com/',
+            'options' => [
+                'class' => 'form-control',
+                'data-counter' => 300,
+            ],
+        ],
+    ])
+    ->setField([
+        'id' => 'download-button',
+        'section_id' => 'header-button',
+        'type' => 'text',
+        'label' => 'Nút download',
+        'attributes' => [
+            'name' => 'download-button',
+            'value' => 'https://google.com/',
+            'options' => [
+                'class' => 'form-control',
+                'data-counter' => 300,
+            ],
+        ],
+    ])
+
+    ;
+
 
 add_action('init', function () {
     config(['filesystems.disks.public.root' => public_path('storage')]);
