@@ -26,7 +26,7 @@ theme_option()
         'label' => __('Copyright'),
         'attributes' => [
             'name' => 'copyright',
-            'value' => '© 2021 Kubet. All right reserved.',
+            'value' => '© 2021 KUBETTOP1. All right reserved.',
             'options' => [
                 'class' => 'form-control',
                 'placeholder' => __('Change copyright'),
