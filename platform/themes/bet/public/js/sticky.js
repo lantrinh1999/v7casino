@@ -42,16 +42,16 @@
     this.wrapper = this.$wrapper[0]
   }
 
-  /* Public */
-  Sticky.prototype.destroy = function() {
-    if (this.$element.parent()[0] === this.wrapper) {
-      this.waypoint.destroy()
-      this.$element.removeClass(this.options.stuckClass)
-      if (this.options.wrapper) {
-        this.$element.unwrap()
-      }
-    }
-  }
+  // /* Public */
+  // Sticky.prototype.destroy = function() {
+  //   if (this.$element.parent()[0] === this.wrapper) {
+  //     this.waypoint.destroy()
+  //     this.$element.removeClass(this.options.stuckClass)
+  //     if (this.options.wrapper) {
+  //       this.$element.unwrap()
+  //     }
+  //   }
+  // }
 
   Sticky.defaults = {
     wrapper: '<div class="sticky-wrapper" />',
