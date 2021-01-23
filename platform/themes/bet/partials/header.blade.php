@@ -44,16 +44,16 @@
                         </marquee>
                       </li>
                     </ul>
-                    <div style="min-width: 321px" class="d-flex justify-content-end">
+                    <div style="min-width: 234px" class="d-flex justify-content-end">
                         <div class="account-button account-button-header">
                             <a href="{{ theme_option('register-button') ?? '#' }}" class="btn-account btn-signup">Đăng ký</a>
                             <a href="{{ theme_option('login-button') ?? '#' }}" class="btn-account btn-login">Đăng nhập</a>
                         </div>
-                        <div class="download">
+                        {{-- <div class="download">
                             <a target="_blank" href="{{ theme_option('download_url') ?? '//fb.com' }}">
                                 <img width="111px" src="http://www.pngmart.com/files/10/Download-Now-Button-PNG-File.png" alt="download">
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </nav>

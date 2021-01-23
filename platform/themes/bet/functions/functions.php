@@ -1,4 +1,5 @@
 <?php
+if(!app()->runningInConsole())
 Menu::addMenuLocation('bet-footer-1', 'Footer 1');
 Menu::addMenuLocation('bet-footer-2', 'Footer 2');
 Menu::addMenuLocation('bet-footer-3', 'Footer 3');
@@ -139,20 +140,20 @@ theme_option()
         ],
     ])
 
-    ->setField([
-        'id' => 'download_url',
-        'section_id' => 'opt-text-subsection-general',
-        'type' => 'url',
-        'label' => "Đường dẫn download",
-        'attributes' => [
-            'name' => 'download_url',
-            'value' => null,
-            'options' => [
-                'class' => 'form-control',
-                'data-counter' => 250,
-            ],
-        ],
-    ])
+    // ->setField([
+    //     'id' => 'download_url',
+    //     'section_id' => 'opt-text-subsection-general',
+    //     'type' => 'url',
+    //     'label' => "Đường dẫn download",
+    //     'attributes' => [
+    //         'name' => 'download_url',
+    //         'value' => null,
+    //         'options' => [
+    //             'class' => 'form-control',
+    //             'data-counter' => 250,
+    //         ],
+    //     ],
+    // ])
 ;
 
 // trang chủ
