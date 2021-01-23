@@ -177,22 +177,25 @@ theme_option()
                 'data-counter' => 300,
             ],
         ],
-    ])
-    ->setField([
-        'id' => 'home-category-1',
-        'section_id' => 'Home-setting',
-        'type' => 'customSelect',
-        'label' => 'Danh mục 1',
-        'attributes' => [
-            'name' => 'home-category-1',
-            'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
-                ->mapWithKeys(function ($item) {
-                    return [$item['id'] => $item['name']];
-                })->all(),
-        ],
+    ]);
+    if(!empty(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)) {
+        theme_option()->setField([
+            'id' => 'home-category-1',
+            'section_id' => 'Home-setting',
+            'type' => 'customSelect',
+            'label' => 'Danh mục 1',
+            'attributes' => [
+                'name' => 'home-category-1',
+                'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
+                    ->mapWithKeys(function ($item) {
+                        return [$item['id'] => $item['name']];
+                    })->all(),
+            ],
 
-    ])
-    ->setField([
+        ]);
+    }
+
+    theme_option()->setField([
         'id' => 'home-category-title-2',
         'section_id' => 'Home-setting',
         'type' => 'text',
@@ -205,22 +208,24 @@ theme_option()
                 'data-counter' => 300,
             ],
         ],
-    ])
-    ->setField([
-        'id' => 'home-category-2',
-        'section_id' => 'Home-setting',
-        'type' => 'customSelect',
-        'label' => 'Danh mục 2',
-        'attributes' => [
-            'name' => 'home-category-2',
-            'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
-                ->mapWithKeys(function ($item) {
-                    return [$item['id'] => $item['name']];
-                })->all(),
-        ],
+    ]);
+    if(!empty(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)) {
+        theme_option()->setField([
+            'id' => 'home-category-2',
+            'section_id' => 'Home-setting',
+            'type' => 'customSelect',
+            'label' => 'Danh mục 2',
+            'attributes' => [
+                'name' => 'home-category-2',
+                'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
+                    ->mapWithKeys(function ($item) {
+                        return [$item['id'] => $item['name']];
+                    })->all(),
+            ],
 
-    ])
-    ->setField([ // Set field for section
+        ]);
+    }
+    theme_option()->setField([ // Set field for section
         'id' => 'home-description',
         'section_id' => 'Home-setting',
         'type' => 'editor',
