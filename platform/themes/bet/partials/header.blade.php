@@ -23,9 +23,13 @@
                 <div class="d-block d-lg-none">
                     <div class="me-auto">
                         {{-- MOBILE --}}
-                        <div style="display: block !important" class="account-button account-button-header">
-                            <a href="{{ theme_option('login-button') ?? '#' }}" id="btn-signup" class="btn-account btn-login"><span>Đăng nhập</span></a>
-                            <a href="{{ theme_option('register-button') ?? '#' }}" id="btn-login" class="btn-account btn-signup"><span>Đăng ký</span></a>
+                        <div class="account-button account-button-header d-flex">
+                            <div class="div-btn">
+                                <a href="{{ theme_option('login-button') ?? '#' }}" id="btn-signup" class="btn-account btn-login">Đăng nhập</a>
+                            </div>
+                            <div class="div-btn">
+                                <a href="{{ theme_option('register-button') ?? '#' }}" id="btn-login" class="btn-account btn-signup">Đăng ký</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -44,7 +48,7 @@
                       </li>
                     </ul>
                     <div style="min-width: 250px" class="d-flex justify-content-end">
-                        <div class="account-button account-button-header d-flex">
+                        <div class="account-button account-button-header d d-flex">
                             {{-- DESKTOP --}}
                             <div class="div-btn">
                                 <a href="{{ theme_option('register-button') ?? '#' }}" class="btn-account btn-account-desktop d-block">

@@ -138,7 +138,7 @@ a:hover, .header-menu nav > ul > li:hover > a.menu-link {
 }
 .mm-ocd__content .account-button.account-button-sm a {
     margin: 5px 10px;
-    padding: 0px 10px;
+    padding: 10px 10px;
     width: 120px;
 }
 .btn-account-desktop {

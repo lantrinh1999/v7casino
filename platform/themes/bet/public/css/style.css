@@ -690,3 +690,13 @@ main {
 .div-btn {
     min-width: 20px;
 }
+.account-button-header .btn-account {
+    min-width: 60px !important;
+    display: block !important;
+}
+.account-button-header .div-btn {
+    min-width: 100px;
+}
+.account-button-header.d .div-btn {
+    min-width: 120px;
+}
