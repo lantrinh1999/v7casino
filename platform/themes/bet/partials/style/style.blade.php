@@ -118,7 +118,7 @@ a:hover, .header-menu nav > ul > li:hover > a.menu-link {
     align-items: center;
 }
 .account-button-header .btn-account {
-    padding: 8px 10px;
+    padding: 5px 10px;
     margin: 0 5px;
 }
 .navbar {
@@ -126,5 +126,37 @@ a:hover, .header-menu nav > ul > li:hover > a.menu-link {
 }
 .account-button.account-button-sm a {
     margin: 5px 10px;
+}
+.sub-menu-mobile .account-button a {
+    min-width: 80px !important;
+}
+.navbar-brand {
+    margin-right: 0 !important;
+}
+.header-top  {
+    border-bottom: #66666638 1px solid;
+}
+.mm-ocd__content .account-button.account-button-sm a {
+    margin: 5px 10px;
+    padding: 0px 10px;
+    width: 120px;
+}
+.btn-account-desktop {
+    min-width: 110px;
+    height: 35px;
+    font-size: 15px;
+    background: url('/btn-desktop.png') no-repeat;
+    color: #fff;
+    display: block;
+    background-size: 100% auto;
+    cursor: pointer;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    font-weight: normal;
+}
+.btn-account-desktop:hover {
+    color: #fff !important;
+    background: url('/btn-desktop-hover.png') no-repeat;
+    background-size: 100% auto;
 }
 </style>

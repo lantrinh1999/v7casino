@@ -9,7 +9,7 @@
 @endphp
 <main>
     {!! Theme::partial('home.slider') !!}
-    <div class="container">
+    <div class="container container-home">
         <div class="wrap-main">
             @if (!empty(count($category1)))
             <div class="block block-post">

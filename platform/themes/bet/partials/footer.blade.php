@@ -53,7 +53,7 @@
         let html2 = $('#btn-login').get(0).outerHTML;
         setTimeout(function() {
             $('.mm-ocd__content').append(
-                `<div class="account-button account-button-sm">
+                `<div class="account-button account-button-sm d-flex justify-content-between">
                     ${html1}
                     ${html2}
                     </div>`
