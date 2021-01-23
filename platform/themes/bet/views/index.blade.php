@@ -54,16 +54,6 @@
 
                 <div class="block-content">
                     <div class="row">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="post-item">
-                                <div class="post-img">
-                                    <img src="img/post1.jpg" alt="post">
-                                </div>
-                                <a href="#" class="post-link">
-                                    Soi kèo trận đấu AC Milan vs Juventus Serie A
-                                </a>
-                            </div>
-                        </div>
                         @foreach ($category2 as $post)
                         <div class="col-md-6 col-lg-3">
                             <div class="post-item">
