@@ -185,10 +185,10 @@ theme_option()
         'label' => 'Danh mục 1',
         'attributes' => [
             'name' => 'home-category-1',
-            'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
-                ->mapWithKeys(function ($item) {
-                    return [$item['id'] => $item['name']];
-                })->all(),
+            // 'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
+            //     ->mapWithKeys(function ($item) {
+            //         return [$item['id'] => $item['name']];
+            //     })->all(),
         ],
 
     ])
