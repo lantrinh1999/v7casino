@@ -153,7 +153,7 @@ theme_option()
             ],
         ],
     ])
-    ;
+;
 
 // trang chủ
 theme_option()
@@ -178,72 +178,70 @@ theme_option()
             ],
         ],
     ]);
-    if(!empty(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)) {
-        theme_option()->setField([
-            'id' => 'home-category-1',
-            'section_id' => 'Home-setting',
-            'type' => 'customSelect',
-            'label' => 'Danh mục 1',
-            'attributes' => [
-                'name' => 'home-category-1',
-                'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
-                    ->mapWithKeys(function ($item) {
-                        return [$item['id'] => $item['name']];
-                    })->all(),
-            ],
-
-        ]);
-    }
-
+if (!empty(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)) {
     theme_option()->setField([
-        'id' => 'home-category-title-2',
+        'id' => 'home-category-1',
         'section_id' => 'Home-setting',
-        'type' => 'text',
-        'label' => 'Tiêu đề danh mục 2',
+        'type' => 'customSelect',
+        'label' => 'Danh mục 1',
         'attributes' => [
-            'name' => 'home-category-title-2',
-            'value' => 'Ku bet new',
-            'options' => [
-                'class' => 'form-control',
-                'data-counter' => 300,
-            ],
+            'name' => 'home-category-1',
+            'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
+                ->mapWithKeys(function ($item) {
+                    return [$item['id'] => $item['name']];
+                })->all(),
         ],
-    ]);
-    if(!empty(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)) {
-        theme_option()->setField([
-            'id' => 'home-category-2',
-            'section_id' => 'Home-setting',
-            'type' => 'customSelect',
-            'label' => 'Danh mục 2',
-            'attributes' => [
-                'name' => 'home-category-2',
-                'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
-                    ->mapWithKeys(function ($item) {
-                        return [$item['id'] => $item['name']];
-                    })->all(),
-            ],
 
-        ]);
-    }
-    theme_option()->setField([ // Set field for section
-        'id' => 'home-description',
+    ]);
+}
+
+theme_option()->setField([
+    'id' => 'home-category-title-2',
+    'section_id' => 'Home-setting',
+    'type' => 'text',
+    'label' => 'Tiêu đề danh mục 2',
+    'attributes' => [
+        'name' => 'home-category-title-2',
+        'value' => 'Ku bet new',
+        'options' => [
+            'class' => 'form-control',
+            'data-counter' => 300,
+        ],
+    ],
+]);
+if (!empty(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)) {
+    theme_option()->setField([
+        'id' => 'home-category-2',
         'section_id' => 'Home-setting',
-        'type' => 'editor',
-        'label' => 'Giới thiệu chung',
+        'type' => 'customSelect',
+        'label' => 'Danh mục 2',
         'attributes' => [
-            'name' => 'home-description',
-            'value' => null, // Default value
-            'options' => [ // Optional
-                'class' => 'form-control theme-option-textarea',
-                'row' => '10',
-            ],
+            'name' => 'home-category-2',
+            'values' => app(\Botble\Blog\Repositories\Interfaces\CategoryInterface::class)->getModel()->all()
+                ->mapWithKeys(function ($item) {
+                    return [$item['id'] => $item['name']];
+                })->all(),
         ],
+
     ]);
+}
+theme_option()->setField([ // Set field for section
+    'id' => 'home-description',
+    'section_id' => 'Home-setting',
+    'type' => 'editor',
+    'label' => 'Giới thiệu chung',
+    'attributes' => [
+        'name' => 'home-description',
+        'value' => null, // Default value
+        'options' => [ // Optional
+            'class' => 'form-control theme-option-textarea',
+            'row' => '10',
+        ],
+    ],
+]);
 
-
-
-    // button header
-    theme_option()
+// button header
+theme_option()
     ->setSection([ // Set section with no field
         'title' => __('Nút trên Header'),
         'desc' => __('Cút trên Header'),
@@ -308,8 +306,7 @@ theme_option()
         ],
     ])
 
-    ;
-
+;
 
 add_action('init', function () {
     config(['filesystems.disks.public.root' => public_path('storage')]);
