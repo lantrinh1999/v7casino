@@ -127,9 +127,9 @@ a:hover, .header-menu nav > ul > li:hover > a.menu-link {
 .account-button.account-button-sm a {
     margin: 5px 10px;
 }
-.sub-menu-mobile .account-button a {
+/* .sub-menu-mobile .account-button a {
     min-width: 80px !important;
-}
+} */
 .navbar-brand {
     margin-right: 0 !important;
 }
@@ -141,7 +141,7 @@ a:hover, .header-menu nav > ul > li:hover > a.menu-link {
     padding: 10px 10px;
     width: 120px;
 }
-.btn-account-desktop {
+.btn-account-desktop, .sub-menu-mobile .btn-account , .account-button-header .btn-account {
     min-width: 110px;
     height: 35px;
     font-size: 15px;
@@ -154,7 +154,7 @@ a:hover, .header-menu nav > ul > li:hover > a.menu-link {
     transition: all .25s;
     font-weight: normal;
 }
-.btn-account-desktop:hover {
+.btn-account-desktop:hover, .sub-menu-mobile .btn-account:hover, .account-button-header .btn-account:hover {
     color: #fff !important;
     background: url('/btn-desktop-hover.png') no-repeat;
     background-size: 100% auto;

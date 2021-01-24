@@ -54,7 +54,7 @@
   // }
 
   Sticky.defaults = {
-    wrapper: '<div class="sticky-wrapper" />',
+    wrapper: '<div class="sticky-wrapper">',
     stuckClass: 'stuck',
     direction: 'down right'
   }
