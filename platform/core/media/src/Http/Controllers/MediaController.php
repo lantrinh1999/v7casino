@@ -334,7 +334,13 @@ class MediaController extends Controller
                             $error = true;
                         }
                     } else {
-                        $this->folderRepository->deleteFolder($id);
+                        // $this->folderRepository->deleteFolder($id);
+                        $folder = $this->folderRepository->getModel()->find($id);
+                        if(!empty($folder) && $folder->slug != 'posts') {
+                            $this->folderRepository->deleteFolder($id);
+                        } else {
+                            $error = true;
+                        }
                     }
                 }
 
