@@ -1,0 +1,21 @@
+@media only screen and (min-width: 768px) {
+  .container.container-home {
+    max-width: 75% !important;
+  }
+  .logo img {
+    margin-left: 10px;
+  }
+  .header-top .container {
+    max-width: 75% !important;
+  }
+  marquee.text-white {
+    color: #f5a100 !important;
+  }
+  .navbar-brand .logo {
+    margin-right: 5px !important;
+  }
+  .slide-img {
+    height: 300px !important;
+    overflow: hidden;
+}
+}

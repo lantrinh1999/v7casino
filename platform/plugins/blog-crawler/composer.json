@@ -1,0 +1,8 @@
+{
+    "name": "botble/blog-crawler",
+    "description": "crawler plugin",
+    "type": "package",
+    "require": {
+        "fabpot/goutte": "^4.0"
+    }
+}
