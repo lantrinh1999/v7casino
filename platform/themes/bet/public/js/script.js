@@ -53,7 +53,7 @@ $(document).ready(function () {
 
         if (windowsize > 991) {
             let sticky = new Waypoint.Sticky({
-                element: $('.header-menu')
+                element: $('div.header-all')
             })
         }
     }

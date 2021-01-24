@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div class="header">
+<div class="header header-all">
     <div class="header-top">
         <div class="container py-0 py-lg-2">
             <nav class="navbar navbar-expand-lg">
