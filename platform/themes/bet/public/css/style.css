@@ -747,3 +747,30 @@ main {
 .accordion-collapse{
     transition: all 0.1s ease 0s;
 }
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .container.container-home {
+      max-width: 75% !important;
+    }
+    .logo img {
+      margin-left: 10px;
+    }
+    .header-top .container {
+      max-width: 75% !important;
+    }
+    marquee.text-white {
+      color: #f5a100 !important;
+    }
+    .navbar-brand .logo {
+      margin-right: 15px !important;
+    }
+    .slide-img {
+      height: 300px !important;
+      overflow: hidden;
+  }
+  }
