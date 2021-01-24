@@ -76,7 +76,7 @@ return [
                 ->usePath()->add('mmenu-light-js', 'js/mmenu-light.js', ['jquery'], [], '5.11')
                 ->usePath()->add('jquery-waypoints-min-js', 'js/jquery.waypoints.min.js', ['jquery'], [], '5.11')
                 ->usePath()->add('sticky-js', 'js/sticky.js', ['jquery'], [], '5.11')
-                ->usePath()->add('script-js', 'js/script.js', ['jquery'], [], '5.11');
+                ->usePath()->add('script-js', 'js/script.js', ['jquery'], [], '5.11.1');
 
             $theme
                 ->asset()
@@ -85,8 +85,8 @@ return [
                 ->usePath()->add('slick-css', 'css/slick.css')
                 ->usePath()->add('slick-theme-css', 'css/slick-theme.css')
                 ->usePath()->add('mmenu-light-css', 'css/mmenu-light.css')
-                ->usePath()->add('custom', 'css/custom.css', [], [], '5.11')
-                ->usePath()->add('style', 'css/style.css', [], [], '5.11');
+                ->usePath()->add('custom', 'css/custom.css', [], [], '5.11.2')
+                ->usePath()->add('style', 'css/style.css', [], [], '5.11.20011');
 
             if (function_exists('shortcode')) {
                 $theme->composer(['index', 'page', 'post'], function (\Botble\Shortcode\View\View $view) {
