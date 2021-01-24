@@ -141,24 +141,5 @@ a:hover, .header-menu nav > ul > li:hover > a.menu-link {
     padding: 10px 10px;
     width: 120px;
 }
-.btn-account-desktop, .sub-menu-mobile .btn-account , .account-button-header .btn-account {
-    /* background-color: #dda885; */
-    min-width: 110px;
-    height: 35px;
-    font-size: 15px;
-    background: url('/btn-desktop.png') no-repeat !important;
-    color: #fff;
-    display: block;
-    background-size: 100% auto;
-    cursor: pointer;
-    -webkit-transition: all .25s;
-    transition: all .25s;
-    font-weight: normal;
-}
-.btn-account-desktop:hover, .sub-menu-mobile .btn-account:hover, .account-button-header .btn-account:hover {
-    color: #fde1ac !important;
 
-    background-image: url('/btn-desktop-hover.png') no-repeat !important;
-    background-size: 100% auto;
-}
 </style>

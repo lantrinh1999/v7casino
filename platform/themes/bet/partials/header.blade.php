@@ -13,7 +13,7 @@
 
 <div class="header header-all">
     <div class="header-top">
-        <div class="container py-0 py-lg-2">
+        <div class="container py-1 py-lg-2">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div class="logo text-left">
@@ -24,11 +24,12 @@
                     <div class="me-auto">
                         {{-- MOBILE --}}
                         <div class="account-button account-button-header d-flex">
-                            <div class="div-btn">
-                                <a href="{{ theme_option('login-button') ?? '#' }}" id="btn-signup" class="btn-account btn-login">Đăng nhập</a>
-                            </div>
+
                             <div class="div-btn">
                                 <a href="{{ theme_option('register-button') ?? '#' }}" id="btn-login" class="btn-account btn-signup">Đăng ký</a>
+                            </div>
+                            <div class="div-btn">
+                                <a href="{{ theme_option('login-button') ?? '#' }}" id="btn-signup" class="btn-account btn-login">Đăng nhập</a>
                             </div>
                         </div>
                     </div>
