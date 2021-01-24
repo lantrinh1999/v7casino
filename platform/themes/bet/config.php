@@ -70,6 +70,7 @@ return [
                 ->asset()
                 ->container('footer')
                 ->usePath()->add('jquery', 'js/jquery-3.5.1.min.js')
+                // ->usePath()->add('bootstrap-js3', 'js/bootstrap3.min.js', ['jquery'])
                 ->usePath()->add('bootstrap-js', 'js/bootstrap.min.js', ['jquery'])
                 ->usePath()->add('slick-js', 'js/slick.min.js', ['jquery'], [], '5.11')
                 ->usePath()->add('mmenu-light-js', 'js/mmenu-light.js', ['jquery'], [], '5.11')

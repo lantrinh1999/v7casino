@@ -521,7 +521,7 @@ main {
 }
 
 .accordion-collapse {
-    border: 1px solid #1a1e21;
+    border: none;
 }
 
 .mm-spn.mm-spn--navbar:after {
@@ -700,3 +700,77 @@ main {
 .account-button-header.d .div-btn {
     min-width: 120px;
 }
+
+.accordion-button:not(.collapsed)::before{
+    content: "\f106";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 18px;
+    position: absolute;
+    top: 30%;
+    left: 20px;
+    transition: all 0.3s ease 0s;
+}
+.accordion-button::before{
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 18px;
+    position: absolute;
+    top: 30%;
+    left: 20px;
+    transition: all 0.3s ease 0s;
+}
+.accordion-button  {
+    padding-left: 45px !important;
+}
+.accordion-button::after {
+    display:  none;
+}
+
+.accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #00000005  !important;
+}
+.accordion-button, .accordion-button:focus {
+    border: none;
+    border-bottom: 1px solid #ffffffad !important;
+}
+.accordion-body {
+    border-bottom: 1px solid #ffffffad !important;
+}
+
+.accordion-collapse{
+    transition: all 0.1s ease 0s;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .container.container-home {
+      max-width: 75% !important;
+    }
+    .logo img {
+      margin-left: 10px;
+    }
+    .header-top .container {
+      max-width: 75% !important;
+    }
+    marquee.text-white {
+      color: #f5a100 !important;
+    }
+    .navbar-brand .logo {
+      margin-right: 15px !important;
+    }
+    .slide-img {
+      height: 300px !important;
+      overflow: hidden;
+  }
+  }
