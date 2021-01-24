@@ -1,4 +1,4 @@
-composer install --no-scripts
+# composer install --no-scripts
 
 php artisan vendor:publish --tag=cms-public --force
 
