@@ -1,7 +1,8 @@
 $(document).ready(function () {
     $('.home-slider').slick({
         slidesToShow: 1,
-        arrows: true
+        arrows: true,
+        autoplay: true,
     });
 
     $('.feedback-slider').slick({
