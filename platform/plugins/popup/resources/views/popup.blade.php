@@ -1,5 +1,5 @@
 
-@if (!session('dont_show_popup'))
+@if (!session('popup'))
     <style>
         .overlay {
             position: fixed;

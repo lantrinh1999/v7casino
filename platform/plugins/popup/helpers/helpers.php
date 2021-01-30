@@ -2,7 +2,8 @@
 
 function popup_view()
 {
-    if(empty(\Session::get('dont_show_popup'))) {
+    // dd(\Session::get('popup'));
+    if(empty(\Session::get('popup'))) {
         return view('plugins/popup::popup')->render();
     }
 }

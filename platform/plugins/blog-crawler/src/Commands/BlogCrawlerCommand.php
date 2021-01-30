@@ -150,6 +150,8 @@ class BlogCrawlerCommand extends Command
                         if (!empty($image_filter->count())) {
                             $image = $image_filter->attr('src');
                         }
+                    } else {
+
                     }
                     if (empty($category->image_selector) || empty($image)) {
                         $image_filter = $crawler->filterXPath("//meta[@property='og:image']");
@@ -166,6 +168,13 @@ class BlogCrawlerCommand extends Command
                         $description_filer = $crawler->filter($category->description_selector);
                         if (!empty($description_filer->count())) {
                             $description = $description_filer->text();
+                            $data['description'] = $description;
+                            $data['seo_meta']['seo_description'] = $description;
+                        }
+                    } else {
+                        $description_filer = $crawler->filterXPath("//meta[@property='description']");
+                        if (!empty($description_filer->count())) {
+                            $description = $description_filer->attr('content');
                             $data['description'] = $description;
                             $data['seo_meta']['seo_description'] = $description;
                         }
