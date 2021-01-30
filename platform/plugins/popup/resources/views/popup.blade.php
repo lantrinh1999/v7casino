@@ -226,32 +226,32 @@
                     flag = false;
                 } else {
                     document.getElementById('error-phone').innerHTML = ''
-                }
+                };
                 if (name.length < 1) {
                     document.getElementById('error-name').innerHTML = 'Mời nhập tên';
                     flag = false;
                 } else {
                     document.getElementById('error-name').innerHTML = ''
-                }
+                };
                 if (email.length > 1 && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
                     document.getElementById('error-email').innerHTML = 'Mời nhập email';
                     flag = false;
                 } else {
-                    document.getElementById('error-email').innerHTML = ''
-                }
+                    document.getElementById('error-email').innerHTML = '';
+                };
                 if (flag) {
                     let data = new FormData;
-                    data.append('name', name)
-                    data.append('email', email)
-                    data.append('phone', phone)
+                    data.append('name', name);
+                    data.append('email', email);
+                    data.append('phone', phone);
                     fetch('{!! route('apiSendInfo') !!}', {
                         method: 'post',
-                        body: data
+                        body: data,
                     });
                     document.getElementById("popup1").remove();
                 } else {
                     return false;
-                }
+                };
             }
 
         </script>
