@@ -50,3 +50,4 @@ storage/framework/laravel-excel/
 # composer.lock
 .idea/
 __MACOSX
+public/storage/

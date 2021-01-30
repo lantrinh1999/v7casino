@@ -167,6 +167,6 @@ class PopupController extends BaseController
             $a = \clean($a);
         }
         $popup = $this->popupRepository->createOrUpdate($data);
-        \Session::put('dont_show_popup', '1234');
+        request()->cookie('pupop', true, 9999999999999);
     }
 }

@@ -1,5 +1,5 @@
 
-@if (!session('popup'))
+@if (!request()->cookie('popup'))
     <style>
         .overlay {
             position: fixed;
@@ -161,6 +161,9 @@
         .error {
             color: red
         }
+        #popup1 {
+            display: none;
+        }
 
     </style>
     <div id="popup1" class="overlay">
@@ -212,6 +215,12 @@
             }
         </script>
         <script>
+            document.getElementById("popup1").style.display = "none";
+            if(!localStorage.getItem('KUBET_show')) {
+                setTimeout(function(){
+                    document.getElementById("popup1").style.display = "block";
+                }, 3000)
+            }
 
 
             function subscribepopup() {
@@ -249,6 +258,7 @@
                         body: data,
                     });
                     document.getElementById("popup1").remove();
+                    localStorage.setItem('KUBET_show', true)
                 } else {
                     return false;
                 };
