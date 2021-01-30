@@ -8,6 +8,7 @@
     }
 @endphp
 <main>
+    {!! Theme::partial('popup') !!}
     {!! Theme::partial('home.slider') !!}
     <div class="container container-home">
         <div class="wrap-main">
