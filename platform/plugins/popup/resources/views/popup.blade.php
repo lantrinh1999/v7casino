@@ -207,9 +207,12 @@
             </div>
         </div>
         <script>
-            function hide_popup() {
+        function hide_popup() {
                 document.getElementById("popup1").remove()
             }
+        </script>
+        <script>
+
 
             function subscribepopup() {
                 let name = document.getElementById('fname').value;
