@@ -31,15 +31,13 @@ class BlogCrawlerServiceProvider extends ServiceProvider
         });
 
         Helper::autoload(__DIR__ . '/../../helpers');
+        $this->commands([
+            BlogCrawlerCommand::class,
+        ]);
     }
 
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                BlogCrawlerCommand::class,
-            ]);
-        }
 
         $this->setNamespace('plugins/blog-crawler')
             ->loadAndPublishConfigurations(['permissions'])

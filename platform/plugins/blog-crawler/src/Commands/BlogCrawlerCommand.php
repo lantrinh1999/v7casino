@@ -16,7 +16,7 @@ use Illuminate\Console\Command;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\DomCrawler\Crawler;
-use Botble\Media\Repositories\Eloquent\MediaFolderInterface;
+use Botble\Media\Repositories\Interfaces\MediaFolderInterface;
 class BlogCrawlerCommand extends Command
 {
     /**
@@ -32,6 +32,7 @@ class BlogCrawlerCommand extends Command
      * @var string
      */
     protected $description = 'Command crawler posts';
+    protected $dir = null;
 
     protected $category_link;
     protected $client;
@@ -54,6 +55,8 @@ class BlogCrawlerCommand extends Command
         $this->slugService = $slugService;
         $this->tagService = $tagService;
         $this->categoryService = $categoryService;
+        $dir = $this->checkPostDir();
+        $this->dir = $dir;
         parent::__construct();
     }
 
@@ -160,7 +163,7 @@ class BlogCrawlerCommand extends Command
                         }
                     }
                     if (!empty($image)) {
-                        $image_result = \RvMedia::uploadFromUrl($image);
+                        $image_result = \RvMedia::uploadFromUrl($image, $this->dir->id, $this->dir->slug);
                         $data['image'] = $image_result['data']->url ?? null;
                     }
                     // get description
@@ -269,16 +272,23 @@ class BlogCrawlerCommand extends Command
 
     protected function checkPostDir()
     {
-        $check = app(MediaFolderInterface::class)->getModel()->where('slug', 'blog')->where('parent_id', 0)->first();
+        $name = 'Blog';
+        $slug = 'blog';
+        $parentId = 0;
+        $check = app(MediaFolderInterface::class)->getModel()->where('slug', $slug)->first();
+        // dd($check);
         if(!$check) {
-            $parentId = 0;
-
+            $name = 'Blogs';
             $folder = app(MediaFolderInterface::class)->getModel();
             $folder->user_id = 1;
-            $folder->name = $this->folderRepository->createName($name, $parentId);
-            $folder->slug = $this->folderRepository->createSlug($name, $parentId);
+            $folder->name = app(MediaFolderInterface::class)->createName($name, $parentId);
+            $folder->slug = app(MediaFolderInterface::class)->createSlug($slug, $parentId);
             $folder->parent_id = $parentId;
-            $this->folderRepository->createOrUpdate($folder);
+            $folder = $folder->toArray();
+            $a = app(MediaFolderInterface::class)->getModel()->firstOrCreate($folder);
+            // dd($a);
+            return $a;
         }
+        return $check;
     }
 }
