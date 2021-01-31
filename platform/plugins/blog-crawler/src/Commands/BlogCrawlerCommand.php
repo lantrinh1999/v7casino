@@ -16,7 +16,7 @@ use Illuminate\Console\Command;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\DomCrawler\Crawler;
-
+use Botble\Media\Repositories\Eloquent\MediaFolderInterface;
 class BlogCrawlerCommand extends Command
 {
     /**
@@ -264,6 +264,21 @@ class BlogCrawlerCommand extends Command
         } catch (Exception $exception) {
             DB::rollBack();
             \Log::error($exception->getMessage());
+        }
+    }
+
+    protected function checkPostDir()
+    {
+        $check = app(MediaFolderInterface::class)->getModel()->where('slug', 'blog')->where('parent_id', 0)->first();
+        if(!$check) {
+            $parentId = 0;
+
+            $folder = app(MediaFolderInterface::class)->getModel();
+            $folder->user_id = 1;
+            $folder->name = $this->folderRepository->createName($name, $parentId);
+            $folder->slug = $this->folderRepository->createSlug($name, $parentId);
+            $folder->parent_id = $parentId;
+            $this->folderRepository->createOrUpdate($folder);
         }
     }
 }
