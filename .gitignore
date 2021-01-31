@@ -1,6 +1,6 @@
 /node_modules
-/public/hot
-/public/storage
+# /public/hot
+# /public/storage
 /storage/*.key
 /vendor
 .DS_Store
@@ -47,3 +47,7 @@ resources/docs
 /log
 
 storage/framework/laravel-excel/
+# composer.lock
+.idea/
+__MACOSX
+public/storage/
