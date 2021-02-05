@@ -28,6 +28,7 @@
         "jenssegers/agent": "^2.6",
         "laravel/framework": "^7.0",
         "league/flysystem-aws-s3-v3": "^1.0",
+        "mimrahe/striptags": "^1.3",
         "wikimedia/composer-merge-plugin": "dev-feature/composer-v2 as 1.5.0"
     },
     "require-dev": {
