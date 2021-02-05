@@ -181,27 +181,23 @@
                             <form name="subscribe" id="subscribe_popup">
                                 <div>
                                     <div class="form-group">
-                                        <input type="text" value="" class="forn-control" placeholder="Tên" name="name"
+                                        <input type="text" value="" class="forn-control" placeholder="Tên tài khoản (KU)" name="name"
                                             id="fname">
                                         <div><span class="error error-name" id="error-name"></span></div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" value="" class="forn-control" placeholder="Số điện thoại"
+                                        <input type="text" value="" class="forn-control" placeholder="Số điện thoại (Zalo)"
                                             name="phone" id="fphone">
                                         <div><span class="error error-phone" id="error-phone"></span></div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" value="" class="forn-control" placeholder="Email"
+                                        <input type="text" value="" class="forn-control" placeholder="Họ và tên"
                                             name="email" id="femail">
                                         <div><span class="error error-email" id="error-email"></span></div>
                                     </div>
-                                    <a class="button" onclick="subscribepopup()"><span>Gửi</span></a>
+                                    <a class="mt-3" class="button" onclick="subscribepopup()"><span>Gửi</span></a>
                                 </div>
                             </form>
-                            <div class="subscribe-bottom">
-                                {{-- <input type="checkbox" id="newsletter_popup_dont_show_again">
-                                <label for="dont_show">Không hiện lại</label> --}}
-                            </div>
                         </div>
                         <!-- /#frm_subscribe -->
                     </div>
@@ -242,8 +238,8 @@
                 } else {
                     document.getElementById('error-name').innerHTML = ''
                 };
-                if (email.length > 1 && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-                    document.getElementById('error-email').innerHTML = 'Mời nhập email';
+                if (email.length < 2) {
+                    document.getElementById('error-email').innerHTML = 'Mời nhập Họ và tên';
                     flag = false;
                 } else {
                     document.getElementById('error-email').innerHTML = '';
