@@ -700,7 +700,8 @@ main {
 }
 
 .account-button-header.d .div-btn {
-    min-width: 120px;
+    /* min-width: 120px; */
+    min-width: 150px;
 }
 
 .accordion-button:not(.collapsed)::before {
