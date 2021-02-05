@@ -2,7 +2,9 @@
     "name": "Kubetnew",
     "namespace": "Theme\\Kubetnew\\",
     "description": "This is a basic theme",
-    "author": "N/A",
+    "author": "KUBETNEW",
     "version": "1.0",
-    "required_plugins": []
+    "required_plugins": [
+        "blog"
+    ]
 }

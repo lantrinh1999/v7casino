@@ -50,9 +50,43 @@ return [
             //     $view->with('auth', \Auth::user());
             // });
 
+            // <link rel="stylesheet" href="vendor/bootstrap-5.0.0-beta1-dist/css/bootstrap.min.css">
+            // <link rel="stylesheet" href="vendor/slick-1.8.1/slick/slick.css">
+            // <link rel="stylesheet" href="vendor/slick-1.8.1/slick/slick-theme.css">
+            // <link rel="stylesheet" href="vendor/fontawesome-free-5.15.1-web/css/all.min.css">
+            // <link rel="stylesheet" href="vendor/mmenu-light/dist/mmenu-light.css">
+            // <link rel="stylesheet" href="css/style.css">
             // You may use this event to set up your assets.
-            $theme->asset()->usePath()->add('style', 'css/style.css');
-            $theme->asset()->container('footer')->usePath()->add('script', 'js/script.js');
+
+            // <script src="vendor/jQuery-3.5.1/jquery-3.5.1.min.js"></script>
+            // <script src="vendor/bootstrap-5.0.0-beta1-dist/js/bootstrap.min.js"></script>
+            // <script src="vendor/slick-1.8.1/slick/slick.min.js"></script>
+            // <script src="vendor/mmenu-light/dist/mmenu-light.js"></script>
+            // <script src="vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+            // <script src="vendor/waypoints/src/shortcuts/sticky.js"></script>
+            // <script src="js/script.js"></script>
+
+            $theme
+                ->asset()
+                ->container('footer')
+                ->usePath()->add('jquery', 'js/jquery-3.5.1.min.js')
+                // ->usePath()->add('bootstrap-js3', 'js/bootstrap3.min.js', ['jquery'])
+                ->usePath()->add('bootstrap-js', 'js/bootstrap.min.js', ['jquery'])
+                ->usePath()->add('slick-js', 'js/slick.min.js', ['jquery'], [], '5.11')
+                ->usePath()->add('mmenu-light-js', 'js/mmenu-light.js', ['jquery'], [], '5.11')
+                ->usePath()->add('jquery-waypoints-min-js', 'js/jquery.waypoints.min.js', ['jquery'], [], '5.11')
+                ->usePath()->add('sticky-js', 'js/sticky.js', ['jquery'], [], '5.11')
+                ->usePath()->add('script-js', 'js/script.js', ['jquery'], [], '5.11.1');
+
+            $theme
+                ->asset()
+                ->usePath()->add('bootstrap-css', 'css/bootstrap.min.css')
+                ->usePath()->add('font-awesome-css', 'css/all.min.css')
+                ->usePath()->add('slick-css', 'css/slick.css')
+                ->usePath()->add('slick-theme-css', 'css/slick-theme.css')
+                ->usePath()->add('mmenu-light-css', 'css/mmenu-light.css')
+                ->usePath()->add('custom', 'css/custom.css', [], [], '5.11.2')
+                ->usePath()->add('style', 'css/style.css', [], [], '5.11.3');
 
             if (function_exists('shortcode')) {
                 $theme->composer(['index', 'page', 'post'], function (\Botble\Shortcode\View\View $view) {
