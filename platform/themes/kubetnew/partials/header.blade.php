@@ -26,6 +26,7 @@
                         <div class="account-button account-button-header d-flex">
 
                             <div class="div-btn">
+                                {{-- #d26e4b --}}
                                 <a href="{{ theme_option('register-button') ?? '#' }}" id="btn-login" class="btn-account btn-signup">Đăng ký</a>
                             </div>
                             <div class="div-btn">
@@ -53,12 +54,12 @@
                             {{-- DESKTOP --}}
                             <div class="div-btn">
                                 <a href="{{ theme_option('register-button') ?? '#' }}" class="btn-account btn-account-desktop d-block">
-                                    Đăng ký
+                                    + Đăng ký KU
                                 </a>
                             </div>
                             <div class="div-btn">
-                                <a href="{{ theme_option('login-button') ?? '#' }}" class="btn-account btn-account-desktop d-block">
-                                    Đăng nhập
+                                <a href="{{ theme_option('login-button') ?? '#' }}" class="btn-account btn-login btn-account-desktop d-block">
+                                    Đăng nhập KU
                                 </a>
                             </div>
                         </div>

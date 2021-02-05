@@ -788,7 +788,9 @@ main {
     min-width: 110px;
     height: 35px;
     font-size: 15px;
-    background: url('/btn-desktop.png') no-repeat !important;
+    /* #7a9c59 */
+    /* background: url('/btn-desktop.png') no-repeat !important; */
+    background-color: #d26e4b;
     color: #fff;
     display: block;
     background-size: 100% auto;
@@ -797,18 +799,19 @@ main {
     transition: all .25s;
     font-weight: normal;
 }
+.btn-account.btn-login {
+    background-color: #7a9c59;
+}
+.btn-account.btn-account-desktop  {
+    text-transform: uppercase;
+}
 .btn-account-desktop:hover, .sub-menu-mobile .btn-account:hover, .account-button-header .btn-account:hover {
     color: #fde1ac !important;
-
-    background-image: url('/btn-desktop-hover.png') no-repeat !important;
     background-size: 100% auto;
 }
 
 @media only screen and (max-width: 400px) {
     .account-button-header .div-btn {
         min-width: 110px !important;
-    }
-    .account-button-header .btn-account {
-        background: url('/btn-desktop-100.png') no-repeat !important;
     }
 }
