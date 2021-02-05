@@ -1,5 +1,5 @@
 <?php
-if (!app()->runningInConsole()) {
+if (empty(app()->runningInConsole())) {
     Menu::addMenuLocation('bet-footer-1', 'Footer 1');
     Menu::addMenuLocation('bet-footer-2', 'Footer 2');
     Menu::addMenuLocation('bet-footer-3', 'Footer 3');
@@ -192,7 +192,6 @@ if (!app()->runningInConsole()) {
                         return [$item['id'] => $item['name']];
                     })->all(),
             ],
-
         ]);
     }
 
