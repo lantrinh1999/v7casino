@@ -277,20 +277,20 @@ if (empty(app()->runningInConsole())) {
                 ],
             ],
         ])
-        ->setField([
-            'id' => 'tutorial-button',
-            'section_id' => 'header-button',
-            'type' => 'text',
-            'label' => 'Nút hướng dẫn',
-            'attributes' => [
-                'name' => 'tutorial-button',
-                'value' => 'https://google.com/',
-                'options' => [
-                    'class' => 'form-control',
-                    'data-counter' => 300,
-                ],
-            ],
-        ])
+        // ->setField([
+        //     'id' => 'tutorial-button',
+        //     'section_id' => 'header-button',
+        //     'type' => 'text',
+        //     'label' => 'Nút hướng dẫn',
+        //     'attributes' => [
+        //         'name' => 'tutorial-button',
+        //         'value' => 'https://google.com/',
+        //         'options' => [
+        //             'class' => 'form-control',
+        //             'data-counter' => 300,
+        //         ],
+        //     ],
+        // ])
         ->setField([
             'id' => 'download-button',
             'section_id' => 'header-button',

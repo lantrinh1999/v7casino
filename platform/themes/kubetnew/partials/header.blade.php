@@ -74,9 +74,9 @@
         </div>
         <div class="sub-menu-mobile d-lg-none">
             <div class="account-button">
-                <a href="{{ theme_option('tutorial-button') ?? '#' }}" class="btn-account btn-signup">Hướng dẫn</a>
+                {{-- <a href="{{ theme_option('tutorial-button') ?? '#' }}" class="btn-account btn-signup">Hướng dẫn</a> --}}
                 <a href="{{ theme_option('download-button') ?? '#' }}" class="btn-account btn-login">Tải app</a>
-                <a href="{{ theme_option('download-button') ?? '#' }}" class="btn-account btn-login">Nhận 100k</a>
+                {{-- <a href="{{ theme_option('download-button') ?? '#' }}" class="btn-account btn-login">Nhận 100k</a> --}}
 
             </div>
         </div>
