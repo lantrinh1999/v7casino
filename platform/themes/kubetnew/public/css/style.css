@@ -779,7 +779,7 @@ main {
         margin-right: 15px !important;
     }
     .slide-img {
-        height: 300px !important;
+        /* height: 300px !important; */
         overflow: hidden;
     }
 }
