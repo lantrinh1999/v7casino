@@ -3,7 +3,7 @@
 $sliders = getSliders(10);
 @endphp
 @if (!empty($sliders) && count($sliders) > 0)
-<div class="home-slider">
+<div class="home-slider container container-home">
     @foreach ($sliders as $item)
     <div class="slide-item-wrap">
         <div class="slide-img">
