@@ -836,7 +836,13 @@ p:empty {
 }
 
 .post--single .post__content {
-    padding: 30px 0
+    padding: 30px 0;
+
+}
+
+.post--single .post__content * {
+    font-size: 17px;
+
 }
 
 .post--single .post__content h1, .post--single .post__content h2, .post--single .post__content h3, .post--single .post__content h4, .post--single .post__content h5, .post--single .post__content p {

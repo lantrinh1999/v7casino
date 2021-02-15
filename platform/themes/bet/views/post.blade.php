@@ -1,7 +1,7 @@
 @php Theme::layout('has-sidebar') @endphp
 @php Theme::set('section-name', $post->name) @endphp
 <style>
-    img {
+    .post img {
         max-width: 100% !important;
         height: auto !important;
     }

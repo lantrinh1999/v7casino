@@ -10,13 +10,15 @@ use Botble\BlogCrawler\Models\CrawlerPost;
 use Botble\Blog\Models\Post;
 use Botble\Blog\Services\StoreCategoryService;
 use Botble\Blog\Services\StoreTagService;
+use Botble\Media\Repositories\Interfaces\MediaFolderInterface;
 use Botble\Slug\Services\SlugService;
 use Goutte\Client;
 use Illuminate\Console\Command;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Mimrahe\StripTags\Stripper;
 use Symfony\Component\DomCrawler\Crawler;
-use Botble\Media\Repositories\Interfaces\MediaFolderInterface;
+
 class BlogCrawlerCommand extends Command
 {
     /**
@@ -188,7 +190,25 @@ class BlogCrawlerCommand extends Command
                         $content = $crawler->filter($category->content_selector);
                         if (!empty($content->count())) {
                             $content_html = $content->html();
-                            $data['content'] = clean($content_html);
+                            // remove a tag
+                            $content_html_clean = $this->stripAtag(clean($content_html)) ?? clean($content_html);
+
+                            $imgs = $this->getImgSrc($content_html_clean);
+                            if (!empty($imgs)) {
+                                $new_imgs = [];
+                                foreach ($imgs as $img) {
+                                    $imgscr = \RvMedia::uploadFromUrl($img, $this->dir->id, $this->dir->slug);
+                                    if (!empty($imgscr['data'])) {
+                                        $new_imgs[] = \get_object_image($imgscr['data']->url);
+                                    }
+                                }
+                                if (count($new_imgs)) {
+                                    $content_html_clean = str_replace($imgs, $new_imgs, $content_html_clean);
+                                }
+                            }
+
+                            $data['content'] = $content_html_clean;
+
                             // get image
                             if (!empty($category->content_image_attr_selector)) {
                                 $ary_attr_scr_name = explode(',', $category->content_image_attr_selector);
@@ -208,7 +228,7 @@ class BlogCrawlerCommand extends Command
                     // get tag
                     if (!empty($category->tag_selector)) {
                         $tag = [];
-                        if(!empty($crawler->filter($category->tag_selector)->count())) {
+                        if (!empty($crawler->filter($category->tag_selector)->count())) {
                             $crawler->filter($category->tag_selector)->each(function (Crawler $node) use (&$tag) {
                                 $tag[]['value'] = $node->text();
                             });
@@ -277,7 +297,7 @@ class BlogCrawlerCommand extends Command
         $parentId = 0;
         $check = app(MediaFolderInterface::class)->getModel()->where('slug', $slug)->first();
         // dd($check);
-        if(!$check) {
+        if (!$check) {
             $name = 'Blogs';
             $folder = app(MediaFolderInterface::class)->getModel();
             $folder->user_id = 1;
@@ -290,5 +310,34 @@ class BlogCrawlerCommand extends Command
             return $a;
         }
         return $check;
+    }
+
+    protected function getImgSrc($html)
+    {
+        $dom = new \DOMDocument();
+        $dom->loadHTML($html);
+        $dom->preserveWhiteSpace = false;
+        $images = $dom->getElementsByTagName('img');
+
+        $data = [];
+        foreach ($images as $image) {
+            $data[] = $image->getAttribute('src');
+        }
+        if (count($data)) {
+            return $data;
+        }
+
+        return false;
+    }
+
+    protected function stripAtag($html)
+    {
+        $stripper = new Stripper($html);
+        $stripper->only(['a']);
+        if (!empty($data = $stripper->strip())) {
+            return $data;
+        }
+
+        return false;
     }
 }
