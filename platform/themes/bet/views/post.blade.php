@@ -20,13 +20,13 @@
                 <span class="post__author"><i class="ion-android-person"></i><span>{{ $post->author->getFullName() }}</span></span>
             @endif --}}
 
-            @if (!$post->tags->isEmpty())
+            {{-- @if (!$post->tags->isEmpty())
                 <span class="post__tags"><i class="ion-pricetags"></i>
                     @foreach ($post->tags as $tag)
                         <a href="{{ $tag->url }}">{{ $tag->name }}</a>
                     @endforeach
                 </span>
-            @endif
+            @endif --}}
         </div>
     </header>
     <div class="post__content">
