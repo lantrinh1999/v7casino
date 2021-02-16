@@ -140,6 +140,21 @@ if (empty(app()->runningInConsole())) {
             ],
         ])
 
+        ->setField([ // Set field for section
+            'id' => 'script_session',
+            'section_id' => 'opt-text-subsection-general',
+            'type' => 'textarea',
+            'label' => 'script_session',
+            'attributes' => [
+                'name' => 'script_session',
+                'value' => '', // Default value
+                'options' => [ // Optional
+                    'class' => 'form-control theme-option-textarea',
+                    'row' => 3,
+                ],
+            ],
+        ])
+
         // ->setField([
         //     'id' => 'download_url',
         //     'section_id' => 'opt-text-subsection-general',
