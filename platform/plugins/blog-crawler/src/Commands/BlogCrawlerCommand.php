@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Mimrahe\StripTags\Stripper;
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\HttpClient\HttpClient;
 
 class BlogCrawlerCommand extends Command
 {
@@ -74,7 +75,28 @@ class BlogCrawlerCommand extends Command
         try {
 
             while ($info = $this->getInfoCrawler()) {
-                $this->scraper($info);
+                $this->category_link = $info->link;
+
+                if (preg_match('[page]', $info->link)) {
+                    $limit = $info->limit ?? 10;
+                    for ($i = 0; $i < $limit; $i++) {
+
+                        $inf = $info;
+                        $a = $i;
+                        $inf->link = str_replace('[page]', "$a", $inf->link);
+                        $return = $this->scraper($inf);
+                        if(empty($return)) {
+                            break;
+                        }
+                        $inf = null;
+
+                    }
+                } else {
+                    $this->scraper($info);
+                }
+                $info->crawl_status = CrawlStatusEnum::DONE;
+                $info->save();
+
             }
 
             $this->checkDone();
@@ -96,8 +118,14 @@ class BlogCrawlerCommand extends Command
         // DB::beginTransaction();
 
         try {
+            $category_link = $category->link;
+            $this->info("--- $category_link");
             $category->crawl_status = CrawlStatusEnum::RUNNING;
+
+            // dump($this->category_link);
+            $category->link = $this->category_link;
             $category->save();
+
             $data = [];
             $data['categories'] = json_decode($category->categories_id, true);
             $data['status'] = BaseStatusEnum::PENDING;
@@ -109,9 +137,10 @@ class BlogCrawlerCommand extends Command
             $crawler_name = $category->name;
             $this->info("+ Crawl $crawler_name");
 
-            $domain = trim(parse_url($category->link)['host']);
+            $domain = trim(parse_url($category_link)['host']);
 
-            $crawler = $this->client->request('GET', $category->link);
+            $crawler = $this->client->request('GET', $category_link);
+            // dump($crawler);
             $post_link_selectors = explode('|', $category->post_link_selector);
 
             $links = [];
@@ -120,6 +149,10 @@ class BlogCrawlerCommand extends Command
                 if (!empty($ary_links) && is_array($ary_links) && count($ary_links) > 0) {
                     $links = [...$links, ...$ary_links];
                 }
+            }
+            dump($links);
+            if(empty(count($links))) {
+                return false;
             }
 
             $links = array_reverse($links);
@@ -131,6 +164,7 @@ class BlogCrawlerCommand extends Command
                     }
 
                     if (CrawlerPost::where('link', $link)->exists()) {
+
                         continue;
                     }
 
@@ -197,6 +231,9 @@ class BlogCrawlerCommand extends Command
                             if (!empty($imgs)) {
                                 $new_imgs = [];
                                 foreach ($imgs as $img) {
+                                    if (!filter_var($img, FILTER_VALIDATE_URL)) {
+                                        $img = trim($domain) . '/' . trim($img, '/');
+                                    }
                                     $imgscr = \RvMedia::uploadFromUrl($img, $this->dir->id, $this->dir->slug);
                                     if (!empty($imgscr['data'])) {
                                         $new_imgs[] = \get_object_image($imgscr['data']->url);
@@ -256,15 +293,16 @@ class BlogCrawlerCommand extends Command
                         'status' => CrawlStatusEnum::DONE,
                     ]);
                 }
-                $category->crawl_status = CrawlStatusEnum::DONE;
-                $category->save();
             }
 
             DB::commit();
+            return true;
         } catch (Exception $exception) {
             DB::rollBack();
             \Log::error($exception->getMessage());
+            return false;
         }
+        return true;
     }
 
     protected function checkDone()
