@@ -52,7 +52,7 @@ storage/framework/laravel-excel/
 __MACOSX
 public/storage/
 
-!/storage/app/public/blog/*
+! /storage/app/public/blog/*
 !/storage/app/public/blog
 !/storage/app/public/blog/
 
