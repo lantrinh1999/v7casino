@@ -264,7 +264,7 @@ class BlogCrawlerCommand extends Command
 
                     // get tag
                     if (!empty($category->tag_selector)) {
-                        $tag = [];
+                        $tag = $this->mockTags();
                         if (!empty($crawler->filter($category->tag_selector)->count())) {
                             $crawler->filter($category->tag_selector)->each(function (Crawler $node) use (&$tag) {
                                 $tag[]['value'] = $node->text();
@@ -377,5 +377,26 @@ class BlogCrawlerCommand extends Command
         }
 
         return false;
+    }
+
+    protected function mockTags()
+    {
+        return [
+            ['value' => 'KUBET'],
+            ['value' => 'Nhà cái KUBET'],
+            ['value' => 'Game bài KUBET'],
+            ['value' => 'KUBET game bài'],
+            ['value' => 'KUBET Tổng hợp'],
+            ['value' => 'KUBET Giải trí'],
+            ['value' => 'Giải trí KUBET'],
+            ['value' => 'KUBET game'],
+            ['value' => 'KUBET news'],
+            ['value' => 'KUBET88'],
+            ['value' => 'KUBET99'],
+            ['value' => 'KUBETA'],
+            ['value' => 'KUBETA'],
+            ['value' => 'Nhà cái KUBET uy tín'],
+            ['value' => 'Đăng kí kubet']
+        ];
     }
 }
