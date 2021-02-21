@@ -12,7 +12,7 @@
     {!! Theme::partial('home.slider') !!}
     <div class="container container-home">
         <div class="wrap-main">
-            @if (!empty(count($category1)))
+            @if (!empty($category1) && !empty(count($category1)))
             <div class="block block-post">
                 <div class="block-header">
                     <div class="block-title">{{ theme_option('home-category-title-1') ?? 'LINK KU MỚI HOT NHẤT HÔM NAY' }}</div>
@@ -44,7 +44,7 @@
             </div>
             @endif
 
-            @if (!empty(count($category2)))
+            @if (!empty($category2) && !empty(count($category2)))
             <div class="block block-post">
                 <div class="block-header">
                     <div class="block-title">{{ theme_option('home-category-title-2') ?? 'LINK KU MỚI HOT NHẤT HÔM NAY' }}</div>
