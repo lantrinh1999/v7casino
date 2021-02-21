@@ -207,7 +207,7 @@
         </div>
         <script>
         function hide_popup() {
-                document.getElementById("popup1").remove()
+                document.getElementById("popup1").style.display = "none";
             }
         </script>
         <script>
@@ -259,6 +259,11 @@
                     return false;
                 };
             }
+
+            $(".btn-100k, a:contains('NHẬN NGAY 100k')").on('click', function(e){
+                e.preventDefault();
+                document.getElementById("popup1").style.display = "block";
+            })
 
         </script>
     </div>
