@@ -5,6 +5,7 @@ namespace Botble\BlogCrawler\Providers;
 use Botble\Base\Supports\Helper;
 use Botble\Base\Traits\LoadAndPublishDataTrait;
 use Botble\BlogCrawler\Commands\BlogCrawlerCommand;
+use Botble\BlogCrawler\Commands\RunCrawler;
 use Botble\BlogCrawler\Models\CrawlerCategory;
 use Botble\BlogCrawler\Models\CrawlerPost;
 use Botble\BlogCrawler\Repositories\Caches\CrawlerCategoryCacheDecorator;
@@ -33,6 +34,9 @@ class BlogCrawlerServiceProvider extends ServiceProvider
         Helper::autoload(__DIR__ . '/../../helpers');
         $this->commands([
             BlogCrawlerCommand::class,
+        ]);
+        $this->commands([
+            RunCrawler::class,
         ]);
     }
 
