@@ -1,0 +1,9 @@
+{
+    "name": "AppManager",
+    "namespace": "Botble\\AppManager\\",
+    "provider": "Botble\\AppManager\\Providers\\AppManagerServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module app_manager"
+}
