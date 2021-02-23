@@ -129,6 +129,20 @@ if (empty(app()->runningInConsole())) {
                 ],
             ],
         ])
+        ->setField([ // Set field for section
+            'id' => 'tawkto',
+            'section_id' => 'opt-text-subsection-general',
+            'type' => 'textarea',
+            'label' => 'tawkto',
+            'attributes' => [
+                'name' => 'tawkto',
+                'value' => null, // Default value
+                'options' => [ // Optional
+                    'class' => 'form-control theme-option-textarea',
+                    'row' => 3,
+                ],
+            ],
+        ])
         ->setField([
             'id' => 'horizontal_banner',
             'section_id' => 'opt-text-subsection-general',
