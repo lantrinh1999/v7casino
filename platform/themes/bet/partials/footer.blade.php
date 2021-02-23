@@ -44,6 +44,7 @@
         </nav>
     </div>
 </footer>
+{!! Theme::partial('popup') !!}
 <!-- JS Library-->
 {!! Theme::footer() !!}
 <script>
@@ -70,6 +71,9 @@
     });
 
 </script>
+@if (is_plugin_active('popup'))
+@include('plugins/popup::js')
+@endif
 </body>
 
 </html>

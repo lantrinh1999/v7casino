@@ -205,7 +205,7 @@
                 </div>
             </div>
         </div>
-        <script>
+        {{-- <script>
         function hide_popup() {
                 document.getElementById("popup1").style.display = "none";
             }
@@ -253,7 +253,7 @@
                         method: 'post',
                         body: data,
                     });
-                    document.getElementById("popup1").remove();
+                    $('body').find("#popup1").hide();
                     localStorage.setItem('KUBET_show', true)
                 } else {
                     return false;
@@ -264,7 +264,11 @@
                 e.preventDefault();
                 document.getElementById("popup1").style.display = "block";
             })
+            $(document).on('click', '.btn-100k', function(e){
+                e.preventDefault();
+                $('body').find("#popup1").show();
+            })
 
-        </script>
+        </script> --}}
     </div>
 @endif

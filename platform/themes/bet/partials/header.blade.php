@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family={{ urlencode(theme_option('primary_font', 'Roboto')) }}" rel="stylesheet" type="text/css">
     {!! Theme::header() !!}
     {!! Theme::partial('style.style') !!}
+    {!! Theme::partial('tawkto') !!}
+
 </head>
 <body>
 
