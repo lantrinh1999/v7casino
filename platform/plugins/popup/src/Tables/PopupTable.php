@@ -52,7 +52,7 @@ class PopupTable extends TableAbstract
                 return $this->getCheckbox($item->id);
             })
             ->editColumn('created_at', function ($item) {
-                return BaseHelper::formatDate($item->created_at);
+                return date('H:s d-m-Y');
             });
 
         return apply_filters(BASE_FILTER_GET_LIST_DATA, $data, $this->repository->getModel())
