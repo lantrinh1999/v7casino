@@ -54,7 +54,7 @@ class AppManagerTable extends TableAbstract
                 if (!Auth::user()->hasPermission('app-manager.edit')) {
                     return $item->name;
                 }
-                return Html::link(route('app-manager.edit', $item->id), $item->name);
+                return 'API: ' . Html::link(route('get_app', $item->slug), $item->name);
             })
             ->editColumn('checkbox', function ($item) {
                 return $this->getCheckbox($item->id);
@@ -97,6 +97,7 @@ class AppManagerTable extends TableAbstract
             'app_managers.mode',
             'app_managers.created_at',
             'app_managers.status',
+            'app_managers.slug',
         ];
 
         $query = $model->select($select);
@@ -119,6 +120,7 @@ class AppManagerTable extends TableAbstract
                 'name'  => 'app_managers.name',
                 'title' => trans('core/base::tables.name'),
                 'class' => 'text-left',
+                'width' => '100px',
             ],
             'urlLogin' => [
                 'name'  => 'app_managers.urlLogin',

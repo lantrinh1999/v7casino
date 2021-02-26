@@ -28,7 +28,7 @@ class AppManagerForm extends FormAbstract
                 ],
             ])
             ->add('urlLogin', 'text', [
-                'label'      => "urlLogin",
+                'label'      => "URL LOGIN",
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'       => [
                     // 'placeholder'  => trans('core/base::forms.name_placeholder'),
@@ -36,7 +36,7 @@ class AppManagerForm extends FormAbstract
                 ],
             ])
             ->add('urlRegister', 'text', [
-                'label'      => "urlRegister",
+                'label'      => "URL REGISTER",
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'       => [
                     // 'placeholder'  => trans('core/base::forms.name_placeholder'),
