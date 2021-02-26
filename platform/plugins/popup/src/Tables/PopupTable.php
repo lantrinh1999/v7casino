@@ -57,7 +57,7 @@ class PopupTable extends TableAbstract
 
         return apply_filters(BASE_FILTER_GET_LIST_DATA, $data, $this->repository->getModel())
             ->addColumn('operations', function ($item) {
-                return $this->getOperations('popup.edit', 'popup.destroy', $item);
+                return $this->getOperations('popup.edit', '', $item);
             })
             ->escapeColumns([])
             ->make(true);
@@ -130,7 +130,8 @@ class PopupTable extends TableAbstract
      */
     public function bulkActions(): array
     {
-        return $this->addDeleteAction(route('popup.deletes'), 'popup.destroy', parent::bulkActions());
+        return [];
+        return $this->addDeleteAction(route('popup.deletes'), '', parent::bulkActions());
     }
 
     /**
@@ -138,6 +139,7 @@ class PopupTable extends TableAbstract
      */
     public function getBulkChanges(): array
     {
+        return [];
         return [
             'popups.name' => [
                 'title' => trans('core/base::tables.name'),
