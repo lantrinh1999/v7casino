@@ -34,7 +34,8 @@ class PopupTable extends TableAbstract
         $this->repository = $popupRepository;
         $this->setOption('id', 'plugins-popup-table');
         parent::__construct($table, $urlGenerator);
-
+        $this->hasOperations = false;
+        $this->hasActions = false;
         if (!Auth::user()->hasAnyPermission(['popup.edit', 'popup.destroy'])) {
             $this->hasOperations = false;
             $this->hasActions = false;
@@ -56,9 +57,9 @@ class PopupTable extends TableAbstract
             });
 
         return apply_filters(BASE_FILTER_GET_LIST_DATA, $data, $this->repository->getModel())
-            ->addColumn('operations', function ($item) {
-                return $this->getOperations('popup.edit', '', $item);
-            })
+            // ->addColumn('operations', function ($item) {
+            //     return $this->getOperations('', '', $item);
+            // })
             ->escapeColumns([])
             ->make(true);
     }
